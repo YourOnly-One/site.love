@@ -1,0 +1,181 @@
+<footer class="bg-secondary">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+          {{- /* We changed the logo link to support relLangURL */ -}}
+          <a href="{{ "/" | relLangURL }}"><img src="{{site.Params.logo | absURL }}" alt="{{site.Title}}" class="img-fluid"></a>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+          {{ if .Site.Params.address }}
+          <h6>Address</h6>
+          <ul class="list-unstyled">
+            <li class="font-secondary text-dark">{{site.Params.address | markdownify }}</li>
+          </ul>
+          {{ end }}
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+          {{ if or  .Site.Params.mobile  .Site.Params.email }}         
+          <h6>Contact Info</h6>
+          <ul class="list-unstyled">
+            {{ if .Site.Params.mobile }}
+            <li class="font-secondary text-dark">Tel : {{ .Site.Params.mobile | markdownify }}</li>
+            {{ end }}
+            {{ if .Site.Params.email }}           
+            <li class="font-secondary text-dark">Email : {{ .Site.Params.email | markdownify }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+          <h6>{{- T "Follow" }}</h6>
+          <ul class="list-inline d-inline-block">
+            {{ range site.Params.social }}
+            <li class="list-inline-item"><a href="{{ .link | safeURL }}" class="text-dark"><i class="{{ .icon }}"></i></a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center pb-3">
+    {{- /* <p class="mb-0">{{ site.Params.copyright | markdownify }}</p> */ -}}
+    <p class="mb-0">
+
+      <!-- BGN: Hugo Yuki Footer -->
+        {{ if .Site.Params.siteStartYear }}
+          <!-- BGN: Yuki_Copyleft -->
+            <footer id="Yuki_site_footer" class="global_footer grid_center">
+              {{- /*
+              <div class="best_viewed txt_center">
+                {{ i18n "BestViewedInBGN" }} <b>{{ i18n "GeckoBased" }}</b> (<b><a href="https://getfirefox.com" rel="noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">Firefox</a></b>) &amp; <b>{{ i18n "GoannaBased" }}</b> (<b><a href="https://www.palemoon.org" rel="noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">Pale Moon</a></b>) {{ i18n "BestViewedInEND" }}
+                <br/>
+                (<a href="https://techmagus.YourOnly.One/browser-wars-3-blink-gecko-quantum/" rel="me noopener">#BrowserWars3</a>)
+              </div>
+              */ -}}
+              <div class="menu_footer txt_center">
+                <a href="https://im.YourOnly.One/love/" rel="me noopener">{{ i18n "home" }}</a>
+                <!-- ・ <a href="https://CHANGE_THIS/about-us/" rel="me noopener">{{ i18n "about" }}</a> -->
+                ・ <a href="https://YourOnly.One/p/terms-of-service" rel="me noopener">{{ i18n "terms" }}</a>
+                ・ <a href="https://YourOnly.One/p/privacy-policy" rel="me noopener">{{ i18n "privacy" }}</a>
+                ・ <a href="https://YourOnly.One/p/legal-notice" rel="me noopener">{{ i18n "legal" }}</a>
+                ・ <a href="https://YourOnly.One/p/disclosure" rel="me noopener">{{ i18n "disclosure" }}</a>
+                ・ <a href="https://YourOnly.One/p/contact-us" rel="me noopener">{{ i18n "contact" }}</a>
+                ・ <a href="https://YourOnly.One" rel="me noopener">YourOnly.One</a>
+              </div>
+              <div class="cc_icons txt_center">
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/" aria-label="Content License: Creative Commons Attribution-ShareAlike 4.0 International" rel="license noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin"><i style="text-decoration: none;" class="cc cc-cc cc-2x text-red" aria-hidden="true" title="Content License: Creative Commons Attribution-ShareAlike 4.0 International"></i> <i class="cc cc-by cc-2x text-green" aria-hidden="true" title="Content License: Creative Commons Attribution-ShareAlike 4.0 International"></i> <i class="cc cc-sa cc-2x text-blue" aria-hidden="true" title="Content License: Creative Commons Attribution-ShareAlike 4.0 International"></i></a>
+                <!-- <a href="https://creativecommons.org/licenses/by-sa/4.0/" aria-label="Content License: Creative Commons Attribution-ShareAlike 4.0 International" rel="license noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin"><i class="cc cc-THREE cc-2x text-green" aria-hidden="true" title="Content License: Creative Commons Attribution-ShareAlike 4.0 International"></i></a> -->
+              </div>
+              <div class="ypub txt_left">
+                <a href="https://YourOnly.One" title="There Can Be Only One!" rel="me noopener">&#x1F90E;</a>
+              </div>
+              <div class="copyleft txt_center">
+                {{ i18n "ContentOnBGN" }} <span xmlns:dct="https://purl.org/dc/terms/" property="dct:title"><b>{{ .Site.Title }}</b></span>&#x2122; {{ i18n "copyleft" }} &#x1F12F; {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }}–{{ now.Year }}{{ end }} <a xmlns:cc="https://creativecommons.org/ns#" href="https://YourOnly.One" property="cc:attributionName" rel="cc:attributionURL me noopener external" referrerpolicy="strict-origin-when-cross-origin">
+                  <ruby>
+                    <rbc>
+                      <rb>Yahuhanan</rb>
+                    </rbc>
+                    <rp>(</rp><rt xml:lang="he" lang="he">יהוחנן</rt><rp>)</rp>
+                  </ruby>
+                  <ruby>
+                    <ruby>
+                      <ruby>
+                        <rbc>
+                          <rb xml:lang="ja-Latn" lang="ja-Latn">Yukia</rb>
+                        </rbc>
+                        <rp>(</rp><rt xml:lang="ja-Hani" lang="ja-Hani">雪亮</rt><rp>)</rp>
+                      </ruby><rp>(</rp><rt xml:lang="ja-Hira" lang="ja-Hira">ゆきあ</rt><rp>)</rp>
+                    </ruby><!-- <rp>(</rp><rt xml:lang="zh-Latn" lang="zh-Latn">Xuěliàng</rt><rp>)</rp> --> <!-- This should be rtc_under but the serious bug in Chromium-based browsers is blocking us from doing this correctly. -->
+                  </ruby>
+                  <ruby>
+                    <ruby>
+                      <rbc>
+                        <rb xml:lang="fil" lang="fil">Sese</rb>
+                      </rbc>
+                      <rp>(</rp><rt xml:lang="zh" lang="zh">謝</rt><rp>)</rp>
+                    </ruby><rp>(</rp><rt xml:lang="zh-Latn" lang="zh-Latn">Xie</rt><rp>)</rp>
+                  </ruby>
+                  <ruby>
+                    <rbc>
+                      <rb>Cuneta</rb>
+                    </rbc>
+                    <rp>(</rp><rt xml:lang="tl-Tglg" lang="tl-Tglg">ᜃᜓᜈᜒᜆ</rt><rp>)</rp>
+                  </ruby>
+                </a> {{ i18n "ContentOnEND" }}
+                <br/>
+                {{ i18n "PermissionsBeyondScope" }} <a xmlns:cc="https://creativecommons.org/ns#" href="https://youronly.one/p/legal-notice" rel="cc:morePermissions me noopener">https://YourOnly.One/p/legal-notice</a>.
+              </div>
+              <div class="gfiles txt_right">
+                <a href="https://natsari.YourOnly.One" title="I Want to Believe!" rel="me noopener external">&#x1F54E;</a>
+              </div>
+            </footer>
+          <!-- END: Yuki -->
+        {{ else }}
+          <p class="txt_center">{{ i18n "copyleft" }} 🄯 {{ now.Year }} CC BY-SA 4.0 <!-- {{ .Site.Title }} --></p>
+        {{ end }}
+        <br/>
+        <p class="txt_center">
+          {{ i18n "FreeHostingBy" }} <a href="https://keybase.io" rel="noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">Keybase</a>
+          ・ {{ i18n "poweredby" }} <a href="https://gohugo.io/" rel="noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">Hugo</a>
+          ・ {{ i18n "themeby" }} <a href="https://themefisher.com" rel="noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">ThemeFisher</a>
+        </p>
+      <!-- END: Hugo Yuki Footer -->
+
+    </p>
+  </div>
+</footer>
+
+
+{{ "<!-- JS Plugins -->" | safeHTML }}
+{{ range site.Params.plugins.js}}
+<script src="{{ .link | absURL }}"></script>
+{{ end }}
+
+{{ "<!-- Main Script -->" | safeHTML }}
+{{ $script := resources.Get "js/script.js" | minify}}
+<script src="{{ $script.Permalink }}"></script>
+
+
+<!-- cookie -->
+{{ if site.Params.cookies.enable }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-outline-light ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires: {{ site.Params.cookies.expire_days }}
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+<!-- cookie style -->
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+{{ end }}
