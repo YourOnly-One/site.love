@@ -1,106 +1,117 @@
 ####### Base Config #######
-	baseURL = "https://im.YourOnly.One/love"										# .Site.BaseURL
-	title = "Love and Relationship"								# .Site.Title; IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
-	author = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"																# .Site.Author
-	copyright = ""																					# .Site.Copyright; we are using our own footer
-	timeZone = "Asia/Manila"
+  baseURL = "https://im.youronly.one/love"                    # .Site.BaseURL
+  title = "Love and Relationship"               # .Site.Title; IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  copyright = ""                                          # .Site.Copyright; we are using our own footer
+  timeZone = "Asia/Manila"
 
 
 ####### Site settings #######
-	#footnoteAnchorPrefix = ""															# prefix for footnote anchors
-	footnoteReturnLinkContents = "↩"												# text to display for footnote return links
-	paginate = 8
-	#paginatePath = "page"																	# https://example.com/page/2
-	rssLimit = 100
-	summaryLength = 70
+  #footnoteAnchorPrefix = ""                              # prefix for footnote anchors
+  footnoteReturnLinkContents = "↩"                        # text to display for footnote return links
+  paginate = 8
+  #paginatePath = "page"                                  # https://example.com/page/2
+  rssLimit = 100
+  summaryLength = 70
 
-	#### Other settings ####
-		disqusShortname = "youronlyone"												# .Site.DisqusShortname
+  #### Other settings ####
+    disqusShortname = "youronlyone"                       # .Site.DisqusShortname
     #googleAnalytics = ""                     # .Site.GoogleAnalytics
 
 
 ####### Backend settings #######
-	canonifyURLs = true																			# true for our use-case
-	#disableAliases = true																	# use this if we want to use server redirects
-	enableEmoji = true																			# format :smile:
-	enableGitInfo = false																		# it is in Git time
-	enableInlineShortcodes = false													# disabled for security reasons as per Hugo documentation
-	enableRobotsTXT = false																	# Hugo robots.txt template
-	relativeURLs = false																		# false for our use-case; make all relative URLs relative to content root
-	refLinksNotFoundURL = "https://YourOnly.One"
+  canonifyURLs = true                                     # true for our use-case
+  #disableAliases = true                                  # use this if we want to use server redirects
+  enableEmoji = true                                      # format :smile:
+  enableGitInfo = false                                   # it is in Git time
+  enableInlineShortcodes = false                          # disabled for security reasons as per Hugo documentation
+  enableRobotsTXT = false                                 # Hugo robots.txt template
+  relativeURLs = false                                    # false for our use-case; make all relative URLs relative to content root
+  refLinksNotFoundURL = "https://im.youronly.one/love/"
 
-	## Dev settings ##
-		publishDir = "../../live/public/love"
-		enableMissingTranslationPlaceholders = true
+  ## Dev settings ##
+    publishDir = "../../live/public/love"
+    enableMissingTranslationPlaceholders = true
 
-	## Other settings ##
-		PygmentsCodeFences = true
-		PygmentsStyle = "monokai"
-		#disableKinds = [""]																# we are using Atom
+  ## Other settings ##
+    PygmentsCodeFences = true
+    PygmentsStyle = "monokai"
+    #disableKinds = [""]                                # we are using Atom
 
 #### LANG stuff ####
-	defaultContentLanguage = "en-ph"
-	#defaultContentLanguage = "tl-tglg"
-	defaultContentLanguageInSubdir = false									# false -- homepage is using HTML redirect which is blocked by some browsers
-	hasCJKLanguage = true
-	languageCode = "en-ph"
+  defaultContentLanguage = "en-ph"
+  #defaultContentLanguage = "tl-tglg"
+  defaultContentLanguageInSubdir = false                  # false -- homepage is using HTML redirect which is blocked by some browsers
+  hasCJKLanguage = true
+  languageCode = "en-ph"
 
-	## Theme settings ##
-		#pluralizeListTitles = false
-	## Theme settings ##
+  ## Theme settings ##
+    #pluralizeListTitles = false
+  ## Theme settings ##
+
+
+#######  #######  #######  #######  #######  #######  #######  #######
+
+
+[author]                                                    # .Site.Author
+  name = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"
+  email = ""
+  homepage = "https://youronly.one"
+  rel = "me noopener"
+  #rel = "noopener external nofollow"
+  avatar = "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
 
 
 [build]
-	useResourceCacheWhen = "fallback"
-	writeStats = false
+  useResourceCacheWhen = "fallback"
+  writeStats = false
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
 
 
 [caches]
-	[caches.assets]
-	dir = ":resourceDir/_gen"
-	maxAge = "1h"
+  [caches.assets]
+  dir = ":resourceDir/_gen"
+  maxAge = "1h"
 
-	[caches.getcsv]
-	dir = ":cacheDir/:project"
-	maxAge = "1h"
+  [caches.getcsv]
+  dir = ":cacheDir/:project"
+  maxAge = "1h"
 
-	[caches.getjson]
-	dir = ":cacheDir/:project"
-	maxAge = "1h"
+  [caches.getjson]
+  dir = ":cacheDir/:project"
+  maxAge = "1h"
 
-	[caches.images]
-	dir = ":resourceDir/_gen"
-	maxAge = "1h"
+  [caches.images]
+  dir = ":resourceDir/_gen"
+  maxAge = "1h"
 
-	[caches.modules]
-	dir = ":cacheDir/modules"
-	maxAge = "1h"
+  [caches.modules]
+  dir = ":cacheDir/modules"
+  maxAge = "1h"
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
 
 
 [frontmatter]
-	date = ["date", "publishDate"]
-	expiryDate = ["expiryDate"]
-	lastmod = ["lastmod", "date", "publishDate"]	# do not use :fileModTime and :default (default includes git date)
-	publishDate = ["publishDate", "date"]
+  date = ["date", "publishDate"]
+  expiryDate = ["expiryDate"]
+  lastmod = ["lastmod", "date", "publishDate"]  # do not use :fileModTime and :default (default includes git date)
+  publishDate = ["publishDate", "date"]
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
 
 
 [imaging]
-	resampleFilter = "box"
-	quality = 100	# JPEG and WebP quality setting. Default is 75.
-	#hint = "photo" # picture; photo; drawing; icon; text
-	anchor = "smart" # for cropping; center, topleft, top, topright, right, bottomright, bottom, bottomleft, left
+  resampleFilter = "box"
+  quality = 100 # JPEG and WebP quality setting. Default is 75.
+  #hint = "photo" # picture; photo; drawing; icon; text
+  anchor = "smart" # for cropping; center, topleft, top, topright, right, bottomright, bottom, bottomleft, left
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
@@ -108,263 +119,263 @@
 
 # Info: https://gohugo.io/content-management/multilingual/#configure-languages
 [languages]
-	#[languages.en]
-		#contentDir = "content/en"
-		#languageName = "English"
-		#languageFlag = "🇬🇧"
-		#languageCodeHTML = "en"
-		#languageCodeCountry = "DO_NOT_USE"
-		#timeZone = "Etc/UTC"
-		#weight = 110
-		#[languages.en.params]
-		#[[languages.en.menu.main]]
-			#identifier = "about"
-			#name = "About"
-			#url = "/about/"
-		#[[languages.en.menu.main]]
-			#identifier = "posts"
-			#name = "Posts"
-			#url = "/posts/"
+  #[languages.en]
+    #contentDir = "content/en"
+    #languageName = "English"
+    #languageFlag = "🇬🇧"
+    #languageCodeHTML = "en"
+    #languageCodeCountry = "DO_NOT_USE"
+    #timeZone = "Etc/UTC"
+    #weight = 110
+    #[languages.en.params]
+    #[[languages.en.menu.main]]
+      #identifier = "about"
+      #name = "About"
+      #url = "/about/"
+    #[[languages.en.menu.main]]
+      #identifier = "posts"
+      #name = "Posts"
+      #url = "/posts/"
 
-	[languages.en-ph]
-		#contentDir = "content/eng-ph"
-		languageName = "English Philippines"
-		languageFlag = "🇵🇭"
-		languageCodeHTML = "en-PH"
-		languageCodeCountry = "ph"
-		timeZone = "Asia/Manila"
-		weight = 111
-		#[languages.en-ph.params]
-		#[[languages.en-ph.menu.main]]
-			#name              = "Home"
-			#identifier        = "home"
-			#url               = "/"
-			#pre               = "<i class='fa fa-home'></i>"
-			#weight            = 1
-		#[[languages.en-ph.menu.main]]
-			#name              = "About"
-			#identifier        = "about"
-			#url               = "/about/"
-			#pre               = "<i class='far fa-id-card'></i>"
-			#weight            = 2
-		#[[languages.en-ph.menu.main]]
-			#name              = "Posts"
-			#identifier        = "posts"
-			#url               = "/posts/"
-			#pre               = "<i class='far fa-newspaper'></i>"
-			#weight            = 3
-		#[[languages.en-ph.menu.main]]
-			#name              = "Categories"
-			#identifier        = "categories"
-			#url               = "/categories/"
-			#pre               = "<i class='fas fa-sitemap'></i>"
-			#weight            = 5
-		#[[languages.en-ph.menu.main]]
-			#name              = "Tags"
-			#identifier        = "tags"
-			#url               = "/tags/"
-			#pre               = "<i class='fas fa-tags'></i>"
-			#weight            = 6
-		#[[languages.en-ph.menu.main]]
-			#name              = "Contact"
-			#identifier        = "contact"
-			#url               = "/contact/"
-			#pre               = "<i class='far fa-envelope'></i>"
-			#eight            = 7
-		#[[languages.en-ph.menu.main]]
-			#name              = "YourOnly.One™"
-			#identifier        = "yoo-home"
-			#url               = "https://im.YourOnly.One"
-			#pre               = "<i class='fa fa-home'></i>"
-			#weight            = 8
+  [languages.en-ph]
+    #contentDir = "content/eng-ph"
+    languageName = "English Philippines"
+    languageFlag = "🇵🇭"
+    languageCodeHTML = "en-PH"
+    languageCodeCountry = "ph"
+    timeZone = "Asia/Manila"
+    weight = 111
+    #[languages.en-ph.params]
+    #[[languages.en-ph.menu.main]]
+      #name              = "Home"
+      #identifier        = "home"
+      #url               = "/"
+      #pre               = "<i class='fa fa-home'></i>"
+      #weight            = 1
+    #[[languages.en-ph.menu.main]]
+      #name              = "About"
+      #identifier        = "about"
+      #url               = "/about/"
+      #pre               = "<i class='far fa-id-card'></i>"
+      #weight            = 2
+    #[[languages.en-ph.menu.main]]
+      #name              = "Posts"
+      #identifier        = "posts"
+      #url               = "/posts/"
+      #pre               = "<i class='far fa-newspaper'></i>"
+      #weight            = 3
+    #[[languages.en-ph.menu.main]]
+      #name              = "Categories"
+      #identifier        = "categories"
+      #url               = "/categories/"
+      #pre               = "<i class='fas fa-sitemap'></i>"
+      #weight            = 5
+    #[[languages.en-ph.menu.main]]
+      #name              = "Tags"
+      #identifier        = "tags"
+      #url               = "/tags/"
+      #pre               = "<i class='fas fa-tags'></i>"
+      #weight            = 6
+    #[[languages.en-ph.menu.main]]
+      #name              = "Contact"
+      #identifier        = "contact"
+      #url               = "/contact/"
+      #pre               = "<i class='far fa-envelope'></i>"
+      #eight            = 7
+    #[[languages.en-ph.menu.main]]
+      #name              = "YourOnly.One™"
+      #identifier        = "yoo-home"
+      #url               = "https://im.youronly.one"
+      #pre               = "<i class='fa fa-home'></i>"
+      #weight            = 8
 
-	#[languages.fil]
-		#contentDir = "content/filipino"
-		#languageName = "Filipino"
-		#languageFlag = "🇵🇭"
-		#languageCodeHTML = "fil"
-		#languageCodeCountry = "ph"
-		#timeZone = "Asia/Manila"
-		#title = "Yelosan Publishing"
-		#subtitle  = "Mabuhay!"
-		#weight = 120
-		#[languages.fil.params]
-			#homeSubtitle = "Mabuhay!"
-			#[languages.fil.params.logo]
-				#logoText = "Filipino"
-			#[languages.fil.params.copyleft]
-				#ContentOn = "Ang nilalaman ng"
-				#SiteTitle = "Yelosan Publishing"
-				#UnlessOtherwise = ", maliban kung may ibang nakasaad."
-		#[[languages.fil.menu.main]]
-			#identifier = "about"
-			#name = "Tungkol"
-			#url = "/tungkol/"
-		#[[languages.fil.menu.main]]
-			#identifier = "posts"
-			#name = "Mga Post"
-			#url = "/mga-post/"
+  #[languages.fil]
+    #contentDir = "content/filipino"
+    #languageName = "Filipino"
+    #languageFlag = "🇵🇭"
+    #languageCodeHTML = "fil"
+    #languageCodeCountry = "ph"
+    #timeZone = "Asia/Manila"
+    #title = "Yelosan Publishing"
+    #subtitle  = "Mabuhay!"
+    #weight = 120
+    #[languages.fil.params]
+      #homeSubtitle = "Mabuhay!"
+      #[languages.fil.params.logo]
+        #logoText = "Filipino"
+      #[languages.fil.params.copyleft]
+        #ContentOn = "Ang nilalaman ng"
+        #SiteTitle = "Yelosan Publishing"
+        #UnlessOtherwise = ", maliban kung may ibang nakasaad."
+    #[[languages.fil.menu.main]]
+      #identifier = "about"
+      #name = "Tungkol"
+      #url = "/tungkol/"
+    #[[languages.fil.menu.main]]
+      #identifier = "posts"
+      #name = "Mga Post"
+      #url = "/mga-post/"
 
-	#[languages.tl-tglg]
-		#contentDir = "content/tagalog.baybayin"
-		#languageName = "Tagalog Baybayin"
-		#languageFlag = "🇵🇭"
-		#languageCodeHTML = "tl-Tglg"
-		#languageCodeCountry = "ph"
-		#timeZone = "Asia/Manila"
-		#title = "ᜌᜒᜎᜓᜐᜈ᜔ Publishing"
-		#subtitle  = "ᜋᜊᜓᜑᜌ᜔᜶"
-		#weight = 121
-		#[languages.tl-tglg.params]
-			#author = "ᜌᜒᜎᜓᜐᜈ᜔ Publishing"
-			#homeSubtitle = "ᜋᜊᜓᜑᜌ᜔᜶"
-			#[languages.tl-tglg.params.logo]
-				#logoText = "ᜊᜌᜊᜌᜒᜈ᜔ ᜆᜄᜎᜓᜄ᜔"
-			#[languages.tl-tglg.params.copyleft]
-				#ContentOn = "ᜀᜅ᜔ ᜈᜒᜎᜎᜋᜈ᜔ ᜈᜅ᜔"
-				#SiteTitle = "ᜌᜒᜎᜓᜐᜈ᜔ Publishing"
-				#UnlessOtherwise = "᜵ ᜋᜎᜒᜊᜈ᜔ ᜃᜓᜅ᜔ ᜋᜌ᜔ ᜁᜊᜅ᜔ ᜈᜃᜐᜀᜇ᜔᜶"
-			#[languages.tl-tglg.params.name]
-				#yahuhanan = "ᜌᜑᜓᜑᜈᜈ᜔"
-				#yukia = "ᜌᜓᜃᜒᜀ"
-				#sese = "ᜐᜒᜐᜒ"
-				#cuneta = "ᜃᜓᜈᜒᜆ"
-		#[languages.tl-tglg.author]
-			#name = "ᜌᜒᜎᜓᜐᜈ᜔ Publishing"
-		#[[languages.tl-tglg.menu.main]]
-			#identifier = "about"
-			#name = "ᜆᜓᜅ᜔ᜃᜓᜎ᜔"
-			#url = "/ᜆᜓᜅ᜔ᜃᜓᜎ᜔/"
-		#[[languages.tl-tglg.menu.main]]
-			#identifier = "posts"
-			#name = "ᜋᜅ Post"
-			#url = "/ᜋᜅ-post/"
+  #[languages.tl-tglg]
+    #contentDir = "content/tagalog.baybayin"
+    #languageName = "Tagalog Baybayin"
+    #languageFlag = "🇵🇭"
+    #languageCodeHTML = "tl-Tglg"
+    #languageCodeCountry = "ph"
+    #timeZone = "Asia/Manila"
+    #title = "ᜌᜒᜎᜓᜐᜈ᜔ Publishing"
+    #subtitle  = "ᜋᜊᜓᜑᜌ᜔᜶"
+    #weight = 121
+    #[languages.tl-tglg.params]
+      #author = "ᜌᜒᜎᜓᜐᜈ᜔ Publishing"
+      #homeSubtitle = "ᜋᜊᜓᜑᜌ᜔᜶"
+      #[languages.tl-tglg.params.logo]
+        #logoText = "ᜊᜌᜊᜌᜒᜈ᜔ ᜆᜄᜎᜓᜄ᜔"
+      #[languages.tl-tglg.params.copyleft]
+        #ContentOn = "ᜀᜅ᜔ ᜈᜒᜎᜎᜋᜈ᜔ ᜈᜅ᜔"
+        #SiteTitle = "ᜌᜒᜎᜓᜐᜈ᜔ Publishing"
+        #UnlessOtherwise = "᜵ ᜋᜎᜒᜊᜈ᜔ ᜃᜓᜅ᜔ ᜋᜌ᜔ ᜁᜊᜅ᜔ ᜈᜃᜐᜀᜇ᜔᜶"
+      #[languages.tl-tglg.params.name]
+        #yahuhanan = "ᜌᜑᜓᜑᜈᜈ᜔"
+        #yukia = "ᜌᜓᜃᜒᜀ"
+        #sese = "ᜐᜒᜐᜒ"
+        #cuneta = "ᜃᜓᜈᜒᜆ"
+    #[languages.tl-tglg.author]
+      #name = "ᜌᜒᜎᜓᜐᜈ᜔ Publishing"
+    #[[languages.tl-tglg.menu.main]]
+      #identifier = "about"
+      #name = "ᜆᜓᜅ᜔ᜃᜓᜎ᜔"
+      #url = "/ᜆᜓᜅ᜔ᜃᜓᜎ᜔/"
+    #[[languages.tl-tglg.menu.main]]
+      #identifier = "posts"
+      #name = "ᜋᜅ Post"
+      #url = "/ᜋᜅ-post/"
 
-	#[languages.zh-hant]
-		#contentDir = "content/zhongwen.traditional"
-		#languageName = "中文（繁體）"
-		#languageFlag = "🇨🇳"
-		#languageCodeHTML = "zh-Hant"
-		#languageCodeCountry = "cn"
-		#timeZone = "Asia/Shanghai"
-		#weight = 130
+  #[languages.zh-hant]
+    #contentDir = "content/zhongwen.traditional"
+    #languageName = "中文（繁體）"
+    #languageFlag = "🇨🇳"
+    #languageCodeHTML = "zh-Hant"
+    #languageCodeCountry = "cn"
+    #timeZone = "Asia/Shanghai"
+    #weight = 130
 
-	#[languages.zh-hans]
-		#contentDir = "content/zhongwen.simplified"
-		#languageName = "中文（简体）"
-		#languageFlag = "🇨🇳"
-		#languageCodeHTML = "zh-Hans"
-		#languageCodeCountry = "cn"
-		#timeZone = "Asia/Shanghai"
-		#weight = 131
+  #[languages.zh-hans]
+    #contentDir = "content/zhongwen.simplified"
+    #languageName = "中文（简体）"
+    #languageFlag = "🇨🇳"
+    #languageCodeHTML = "zh-Hans"
+    #languageCodeCountry = "cn"
+    #timeZone = "Asia/Shanghai"
+    #weight = 131
 
-	[languages.ja]
-		#contentDir = "content/nihongo"
-		languageName = "日本語"
-		languageFlag = "🇯🇵"
-		languageCodeHTML = "ja"
-		languageCodeCountry = "jp"
-		timeZone = "Asia/Tokyo"
-		weight = 140
-		title = "愛と関係"
-		[languages.ja.params]
-			description = "実りある関係と無条件の愛の秘密を解き明かします。"			# IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
-		#[[languages.ja.menu.main]]
-			#name              = "ホーム"
-			#identifier        = "home"
-			#url               = "/"
-			#pre               = "<i class='fa fa-home'></i>"
-			#weight            = 1
-		#[[languages.ja.menu.main]]
-			#name              = "私について"
-			#identifier        = "about"
-			#url               = "/about/"
-			#pre               = "<i class='far fa-id-card'></i>"
-			#weight            = 2
-		#[[languages.ja.menu.main]]
-			#name              = "ブログ投稿"
-			#identifier        = "posts"
-			#url               = "/posts/"
-			#pre               = "<i class='far fa-newspaper'></i>"
-			#weight            = 3
-		#[[languages.ja.menu.main]]
-			#name              = "カテゴリ"
-			#identifier        = "categories"
-			#url               = "/categories/"
-			#pre               = "<i class='fas fa-sitemap'></i>"
-			#weight            = 5
-		#[[languages.ja.menu.main]]
-			#name              = "タグ"
-			#identifier        = "tags"
-			#url               = "/tags/"
-			#pre               = "<i class='fas fa-tags'></i>"
-			#weight            = 6
-		#[[languages.ja.menu.main]]
-			#name              = "私に連絡して"
-			#identifier        = "contact"
-			#url               = "/contact/"
-			#pre               = "<i class='far fa-envelope'></i>"
-			#weight            = 7
-		#[[languages.ja.menu.main]]
-			#name              = "YourOnly.One™"
-			#identifier        = "yoo-home"
-			#url               = "https://im.YourOnly.One"
-			#pre               = "<i class='fa fa-home'></i>"
-			#weight            = 8
+  [languages.ja]
+    #contentDir = "content/nihongo"
+    languageName = "日本語"
+    languageFlag = "🇯🇵"
+    languageCodeHTML = "ja"
+    languageCodeCountry = "jp"
+    timeZone = "Asia/Tokyo"
+    weight = 140
+    title = "愛と関係"
+    [languages.ja.params]
+      description = "実りある関係と無条件の愛の秘密を解き明かします。"      # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+    #[[languages.ja.menu.main]]
+      #name              = "ホーム"
+      #identifier        = "home"
+      #url               = "/"
+      #pre               = "<i class='fa fa-home'></i>"
+      #weight            = 1
+    #[[languages.ja.menu.main]]
+      #name              = "私について"
+      #identifier        = "about"
+      #url               = "/about/"
+      #pre               = "<i class='far fa-id-card'></i>"
+      #weight            = 2
+    #[[languages.ja.menu.main]]
+      #name              = "ブログ投稿"
+      #identifier        = "posts"
+      #url               = "/posts/"
+      #pre               = "<i class='far fa-newspaper'></i>"
+      #weight            = 3
+    #[[languages.ja.menu.main]]
+      #name              = "カテゴリ"
+      #identifier        = "categories"
+      #url               = "/categories/"
+      #pre               = "<i class='fas fa-sitemap'></i>"
+      #weight            = 5
+    #[[languages.ja.menu.main]]
+      #name              = "タグ"
+      #identifier        = "tags"
+      #url               = "/tags/"
+      #pre               = "<i class='fas fa-tags'></i>"
+      #weight            = 6
+    #[[languages.ja.menu.main]]
+      #name              = "私に連絡して"
+      #identifier        = "contact"
+      #url               = "/contact/"
+      #pre               = "<i class='far fa-envelope'></i>"
+      #weight            = 7
+    #[[languages.ja.menu.main]]
+      #name              = "YourOnly.One™"
+      #identifier        = "yoo-home"
+      #url               = "https://im.youronly.one"
+      #pre               = "<i class='fa fa-home'></i>"
+      #weight            = 8
 
-	[languages.ko]
-		#contentDir = "content/hangugeo"
-		languageName = "한국어"
-		languageFlag = "🇰🇷"
-		languageCodeHTML = "ko"
-		languageCodeCountry = "kr"
-		timeZone = "Asia/Seoul"
-		weight = 150
-		title = "사랑과 관계"
-		[languages.ko.params]
-			description = "결실을 맺는 관계와 무조건적인 사랑의 비밀을 푸십시오."			# IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
-		#[[languages.ko.menu.main]]
-			#name              = "집"
-			#identifier        = "home"
-			#url               = "/"
-			#pre               = "<i class='fa fa-home'></i>"
-			#weight            = 1
-		#[[languages.ko.menu.main]]
-			#name              = "나에 대해서"
-			#identifier        = "about"
-			#url               = "/about/"
-			#pre               = "<i class='far fa-id-card'></i>"
-			#weight            = 2
-		#[[languages.ko.menu.main]]
-			#name              = "게시물"
-			#identifier        = "posts"
-			#url               = "/posts/"
-			#pre               = "<i class='far fa-newspaper'></i>"
-			#weight            = 3
-		#[[languages.ko.menu.main]]
-			#name              = "카테고리"
-			#identifier        = "categories"
-			#url               = "/categories/"
-			#pre               = "<i class='fas fa-sitemap'></i>"
-			#weight            = 5
-		#[[languages.ko.menu.main]]
-			#name              = "태그"
-			#identifier        = "tags"
-			#url               = "/tags/"
-			#pre               = "<i class='fas fa-tags'></i>"
-			#weight            = 6
-		#[[languages.ko.menu.main]]
-			#name              = "문의하기"
-			#identifier        = "contact"
-			#url               = "/contact/"
-			#pre               = "<i class='far fa-envelope'></i>"
-			#weight            = 7
-		#[[languages.ko.menu.main]]
-			#name              = "YourOnly.One™"
-			#identifier        = "yoo-home"
-			#url               = "https://im.YourOnly.One"
-			#pre               = "<i class='fa fa-home'></i>"
-			#weight            = 8
+  [languages.ko]
+    #contentDir = "content/hangugeo"
+    languageName = "한국어"
+    languageFlag = "🇰🇷"
+    languageCodeHTML = "ko"
+    languageCodeCountry = "kr"
+    timeZone = "Asia/Seoul"
+    weight = 150
+    title = "사랑과 관계"
+    [languages.ko.params]
+      description = "결실을 맺는 관계와 무조건적인 사랑의 비밀을 푸십시오."      # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+    #[[languages.ko.menu.main]]
+      #name              = "집"
+      #identifier        = "home"
+      #url               = "/"
+      #pre               = "<i class='fa fa-home'></i>"
+      #weight            = 1
+    #[[languages.ko.menu.main]]
+      #name              = "나에 대해서"
+      #identifier        = "about"
+      #url               = "/about/"
+      #pre               = "<i class='far fa-id-card'></i>"
+      #weight            = 2
+    #[[languages.ko.menu.main]]
+      #name              = "게시물"
+      #identifier        = "posts"
+      #url               = "/posts/"
+      #pre               = "<i class='far fa-newspaper'></i>"
+      #weight            = 3
+    #[[languages.ko.menu.main]]
+      #name              = "카테고리"
+      #identifier        = "categories"
+      #url               = "/categories/"
+      #pre               = "<i class='fas fa-sitemap'></i>"
+      #weight            = 5
+    #[[languages.ko.menu.main]]
+      #name              = "태그"
+      #identifier        = "tags"
+      #url               = "/tags/"
+      #pre               = "<i class='fas fa-tags'></i>"
+      #weight            = 6
+    #[[languages.ko.menu.main]]
+      #name              = "문의하기"
+      #identifier        = "contact"
+      #url               = "/contact/"
+      #pre               = "<i class='far fa-envelope'></i>"
+      #weight            = 7
+    #[[languages.ko.menu.main]]
+      #name              = "YourOnly.One™"
+      #identifier        = "yoo-home"
+      #url               = "https://im.youronly.one"
+      #pre               = "<i class='fa fa-home'></i>"
+      #weight            = 8
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
@@ -372,50 +383,50 @@
 
 # Defaults. Uncomment and change if needed.
 [markup]
-	#defaultMarkdownHandler = "goldmark"
-	#[markup.asciidocExt]
-	#	backend = "html5"
-	#	docType = "article"
-	#	extensions = []
-	#	failureLevel = "fatal"
-	#	noHeaderOrFooter = true
-	#	safeMode = "unsafe"
-	#	sectionNumbers = false
-	#	trace = false
-	#	verbose = true
-	#	workingFolderCurrent = false
-	#	[markup.asciidocExt.attributes]
-	#[markup.goldmark]
-	#	[markup.goldmark.extensions]
-	#		definitionList = true
-	#		footnote = true
-	#		linkify = true
-	#		strikethrough = true
-	#		table = true
-	#		taskList = true
-	#		typographer = true
-	#	[markup.goldmark.parser]
-	#		attribute = true
-	#		autoHeadingID = true
-	#		autoHeadingIDType = "github"
-		[markup.goldmark.renderer]
-	#		hardWraps = false
-			unsafe = true																				# we need this to use full HTML in markdown
-	#		xhtml = false
-	[markup.highlight]
-	#	codeFences = true
-		guessSyntax = true
-	#	hl_Lines = ""
-	#	lineNoStart = 1
-	#	lineNos = false
-	#	lineNumbersInTable = true
-		noClasses = true
-		style = "monokai"
-		tabWidth = 2
-	#[markup.tableOfContents]
-	#	endLevel = 3
-	#	ordered = false
-	#	startLevel = 2
+  #defaultMarkdownHandler = "goldmark"
+  #[markup.asciidocExt]
+  # backend = "html5"
+  # docType = "article"
+  # extensions = []
+  # failureLevel = "fatal"
+  # noHeaderOrFooter = true
+  # safeMode = "unsafe"
+  # sectionNumbers = false
+  # trace = false
+  # verbose = true
+  # workingFolderCurrent = false
+  # [markup.asciidocExt.attributes]
+  #[markup.goldmark]
+  # [markup.goldmark.extensions]
+  #   definitionList = true
+  #   footnote = true
+  #   linkify = true
+  #   strikethrough = true
+  #   table = true
+  #   taskList = true
+  #   typographer = true
+  # [markup.goldmark.parser]
+  #   attribute = true
+  #   autoHeadingID = true
+  #   autoHeadingIDType = "github"
+    [markup.goldmark.renderer]
+  #   hardWraps = false
+      unsafe = true                                       # we need this to use full HTML in markdown
+  #   xhtml = false
+  [markup.highlight]
+  # codeFences = true
+    guessSyntax = true
+  # hl_Lines = ""
+  # lineNoStart = 1
+  # lineNos = false
+  # lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 2
+  #[markup.tableOfContents]
+  # endLevel = 3
+  # ordered = false
+  # startLevel = 2
   [markup.pandoc]
     InputFormat = "markdown"
     UseLegacyHtml = false
@@ -433,34 +444,34 @@
 
 # Defaults. Uncomment and change if needed.
 [minify]
-	#disableCSS = false
-	#disableHTML = false
-	#disableJS = false
-	#disableJSON = false
-	#disableSVG = false
-	#disableXML = false
-	minifyOutput = false																		# should be false to keep the casing of hreflang
-	[minify.tdewolff]
-		#[minify.tdewolff.css]
-			#keepCSS2 = true
-			#precision = 0
-		[minify.tdewolff.html]
-			#keepComments = false
-			#keepConditionalComments = true
-			#keepDefaultAttrVals = true
-			#keepDocumentTags = true
-			keepEndTags = true
-			keepQuotes = true
-			#keepWhitespace = true
-		#[minify.tdewolff.js]
-			#keepVarNames = false
-			#precision = 0
-		#[minify.tdewolff.json]
-			#precision = 0
-		#[minify.tdewolff.svg]
-			#precision = 0
-		#[minify.tdewolff.xml]
-			#keepWhitespace = false
+  #disableCSS = false
+  #disableHTML = false
+  #disableJS = false
+  #disableJSON = false
+  #disableSVG = false
+  #disableXML = false
+  minifyOutput = false                                    # should be false to keep the casing of hreflang
+  [minify.tdewolff]
+    #[minify.tdewolff.css]
+      #keepCSS2 = true
+      #precision = 0
+    [minify.tdewolff.html]
+      #keepComments = false
+      #keepConditionalComments = true
+      #keepDefaultAttrVals = true
+      #keepDocumentTags = true
+      keepEndTags = true
+      keepQuotes = true
+      #keepWhitespace = true
+    #[minify.tdewolff.js]
+      #keepVarNames = false
+      #precision = 0
+    #[minify.tdewolff.json]
+      #precision = 0
+    #[minify.tdewolff.svg]
+      #precision = 0
+    #[minify.tdewolff.xml]
+      #keepWhitespace = false
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
@@ -572,20 +583,20 @@
 
 
 [outputs]
-	# <domain>/posts/my-post/atom.xml
-	page = ["HTML"]																							# default: HTML
+  # <domain>/posts/my-post/atom.xml
+  page = ["HTML"]                                             # default: HTML
 
-	# <domain>/atom.xml
-	home = ["HTML", "JSON", "Atom", "RSS"]											# default: HTML, RSS
+  # <domain>/atom.xml
+  home = ["HTML", "JSON", "Atom", "RSS"]                      # default: HTML, RSS
 
-	# <domain>/posts/atom.xml
-	section = ["HTML", "Atom", "RSS"]														# default: HTML, RSS
+  # <domain>/posts/atom.xml
+  section = ["HTML", "Atom", "RSS"]                           # default: HTML, RSS
 
-	# <domain>/tags/atom.xml, <domain>/categories/atom.xml
-	taxonomy = ["HTML", "Atom", "RSS"]													# default: HTML, RSS
+  # <domain>/tags/atom.xml, <domain>/categories/atom.xml
+  taxonomy = ["HTML", "Atom", "RSS"]                          # default: HTML, RSS
 
-	# <domain>/tags/mytag/atom.xml, <domain>/categories/mycat/atom.xml
-	term = ["HTML", "Atom", "RSS"]															# default: HTML, RSS
+  # <domain>/tags/mytag/atom.xml, <domain>/categories/mycat/atom.xml
+  term = ["HTML", "Atom", "RSS"]                              # default: HTML, RSS
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
@@ -593,134 +604,140 @@
 
 [params]
   googleTagManager = "GTM-KT65GHZ"
-  siteFullURL = "https://im.YourOnly.One/love"								# Unfortunately we need to add this because using .Site.BaseURL is not working properly in /layouts/_default/list.atom.xml
   subdir = "love"
   rssfull = "true"
   faviconcache = "fmgy"
   faviconbuster = "TimmieIsMyFate"
   jquerycdn = true
 
-	### BGN: Structured Data ###
-		siteStartYear = 2016
-		description = "Unlocking the secret to a fruitful relationship and unconditional love."
-		license = "https://im.YourOnly.One/p/legal-notice"
-		#issn = ""
-		#awards = [""]
-		images = ["https://rsc.YourOnly.One/img/y/Love_and_Relationship.webp"]
+  ### BGN: Structured Data ###
+    siteStartYear = 2016
+    description = "Unlocking the secret to a fruitful relationship and unconditional love."
+    license = "https://im.youronly.one/p/legal-notice/"
+    #issn = ""
+    #awards = [""]
+    images = ["https://rsc.youronly.one/img/y/Love_and_Relationship.webp"]
 
-		name = "YourOnly.One" # your company name
-		author = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"
-		primaryauthor = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)" # Used as primary author if no specific is set
-		ownerhomepage = "https://YourOnly.One"
-		alternatenames = [ "JC John Sese Cuneta", "Yuki"]
-		gender = "https://schema.org/Male"
-		knowslanguages = ["en-PH", "fil", "tl-Tglg"]
-		nationality = "Filipino"
+    name = "YourOnly.One" # your company name
+    primaryauthor = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)" # Used as primary author if no specific is set
+    ownerhomepage = "https://youronly.one"
+    alternatenames = [ "JC John Sese Cuneta", "Yuki"]
+    gender = "https://schema.org/Male"
+    knowslanguages = ["en-PH", "fil", "tl-Tglg"]
+    nationality = "Filipino"
 
-		copyright = ""
-		copyrightnotice = "JC John Sese Cuneta"
-		copyrightyear = "2021"			# same as datePublished
+    copyright = ""
+    copyrightnotice = "JC John Sese Cuneta"
+    copyrightyear = "2021"      # same as datePublished
 
-		logourl = "https://rsc.YourOnly.One/img/y/Love_and_Relationship.webp" # Used in structured data as logo url
-		keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Love and Relationship", "Love & Relationship"] # Can be overriden per page
-		imageurl = "https://rsc.YourOnly.One/img/y/Love_and_Relationship.webp" # Used in structured data as background image
+    logourl = "https://rsc.youronly.one/img/y/Love_and_Relationship.webp" # Used in structured data as logo url
+    keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Love and Relationship", "Love & Relationship"] # Can be overriden per page
+    imageurl = "https://rsc.youronly.one/img/y/Love_and_Relationship.webp" # Used in structured data as background image
 
-		contact = "" # Primary email address
-		phone = "" # Primary phone
-		primarylocation = "" # Used as primary location if no specific is set
+    contact = "" # Primary email address
+    phone = "" # Primary phone
+    primarylocation = "" # Used as primary location if no specific is set
 
-		color = "#000000"
-		pricerange = "" # Used in structured data as price range
-	### END: Structured Data ###
+    color = "#000000"
+    pricerange = "" # Used in structured data as price range
+  ### END: Structured Data ###
 
-	### BGN: Theme Settings ###
-		logo = "https://rsc.YourOnly.One/img/y/Love_and_Relationship.webp"
-		home = "Home"
-		# theme layout ( two layout is available, "1" and "2" )
-		layout = "1"
-		# Preloader
-		#preloader = true
-		# search
-		search = true
-		# about author
-		author_image = "images/banner-img.png"
-		bio = "I’m a Freelance Interactive Art Director based in France. Focusing across branding and identity, digital and print."
-		# Contact info
-		#mobile = "+90 000 333 22"
-		#email = "exmaple@ymail.com"
-		#address = "6 rip carl Avenue CA 90733"
-		# Contact Form Action
-		contact_form_action = "#"
+  ### BGN: Theme Settings ###
+    logo = "https://rsc.youronly.one/img/y/Love_and_Relationship.webp"
+    home = "Home"
+    # theme layout ( two layout is available, "1" and "2" )
+    layout = "1"
+    # Preloader
+    #preloader = true
+    # search
+    search = true
+    # about author
+    author_image = "images/banner-img.png"
+    bio = "I’m a Freelance Interactive Art Director based in France. Focusing across branding and identity, digital and print."
+    # Contact info
+    #mobile = "+90 000 333 22"
+    #email = "exmaple@ymail.com"
+    #address = "6 rip carl Avenue CA 90733"
+    # Contact Form Action
+    contact_form_action = "#"
 
-		# CSS Plugins
-		[[params.plugins.css]]
-		link = "plugins/bootstrap/bootstrap.min.css"
-		[[params.plugins.css]]
-		link = "plugins/slick/slick.css"
-		[[params.plugins.css]]
-		link = "plugins/themify-icons/themify-icons.css"
+    # CSS Plugins
+    [[params.plugins.css]]
+    link = "plugins/bootstrap/bootstrap.min.css"
+    [[params.plugins.css]]
+    link = "plugins/slick/slick.css"
+    [[params.plugins.css]]
+    link = "plugins/themify-icons/themify-icons.css"
 
-		# JS Plugins
-		[[params.plugins.js]]
-		link = "plugins/jQuery/jquery.min.js"
-		[[params.plugins.js]]
-		link = "plugins/bootstrap/bootstrap.min.js"
-		[[params.plugins.js]]
-		link = "plugins/slick/slick.min.js"
-		[[params.plugins.js]]
-		link = "plugins/headroom/headroom.js"
-		[[params.plugins.js]]
-		link = "plugins/instafeed/instafeed.min.js"
-		[[params.plugins.js]]
-		link = "plugins/masonry/masonry.js"
-		[[params.plugins.js]]
-		link = "plugins/reading-time/readingTime.min.js"
-		[[params.plugins.js]]
-		link = "plugins/smooth-scroll/smooth-scroll.js"
-		[[params.plugins.js]]
-		link = "plugins/search/fuse.min.js"
-		[[params.plugins.js]]
-		link = "plugins/search/mark.js"
-		[[params.plugins.js]]
-		link = "plugins/search/search.js"
+    # JS Plugins
+    [[params.plugins.js]]
+    link = "plugins/jQuery/jquery.min.js"
+    [[params.plugins.js]]
+    link = "plugins/bootstrap/bootstrap.min.js"
+    [[params.plugins.js]]
+    link = "plugins/slick/slick.min.js"
+    [[params.plugins.js]]
+    link = "plugins/headroom/headroom.js"
+    [[params.plugins.js]]
+    link = "plugins/instafeed/instafeed.min.js"
+    [[params.plugins.js]]
+    link = "plugins/masonry/masonry.js"
+    [[params.plugins.js]]
+    link = "plugins/reading-time/readingTime.min.js"
+    [[params.plugins.js]]
+    link = "plugins/smooth-scroll/smooth-scroll.js"
+    [[params.plugins.js]]
+    link = "plugins/search/fuse.min.js"
+    [[params.plugins.js]]
+    link = "plugins/search/mark.js"
+    [[params.plugins.js]]
+    link = "plugins/search/search.js"
 
-		# Instagram feed
-		[params.instafeed]
-		enable = false
-		access_token = "183794425326191|5734e2f164e94e3247f0f1499061c7b7"
+    # Instagram feed
+    [params.instafeed]
+    enable = false
+    access_token = "183794425326191|5734e2f164e94e3247f0f1499061c7b7"
 
-		# cookies
-		[params.cookies]
-		enable = false
-		expire_days = 2
+    # cookies
+    [params.cookies]
+    enable = false
+    expire_days = 2
 
-		# social site
-		[[params.social]]
-		icon = "fa fa-mastodon"
-		link = "https://mastodon.social/@YourOnlyOne"
+    # social site
+    [[params.social]]
+    icon = "fa fa-mastodon"
+    link = "https://mastodon.social/@YourOnlyOne"
 
-		[[params.social]]
-		icon = "ti-facebook"
-		link = "https://facebook.com/YourOnly.One0"
+    [[params.social]]
+    icon = "ti-facebook"
+    link = "https://facebook.com/YourOnly.One0"
 
-		[[params.social]]
-		icon = "ti-facebook"
-		link = "https://facebook.com/YourOnlyOne7"
+    [[params.social]]
+    icon = "ti-facebook"
+    link = "https://facebook.com/YourOnlyOne7"
 
-		[[params.social]]
-		icon = "ti-twitter-alt"
-		link = "https://twitter.com/YourOnlyOne7"
+    [[params.social]]
+    icon = "ti-twitter-alt"
+    link = "https://twitter.com/YourOnlyOne7"
 
-		[[params.social]]
-		icon = "ti-instagram"
-		link = "https://instagram.com/YourOnly.One"
+    [[params.social]]
+    icon = "ti-instagram"
+    link = "https://instagram.com/YourOnly.One"
 
-		[[params.social]]
-		icon = "ti-youtube"
-		link = "https://youtube.com/YourOnlyOne7"
-	### END: Theme Settings ###
+    [[params.social]]
+    icon = "ti-youtube"
+    link = "https://youtube.com/YourOnlyOne7"
+  ### END: Theme Settings ###
 
   ### BGN: Other Settings ###
+    [params.author]                                                    # .Param "author.key"
+      name = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"
+      email = ""
+      homepage = "https://youronly.one"
+      rel = "me noopener"
+      #rel = "noopener external nofollow"
+      avatar = "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"
+
     [params.siteowner]
       given_name = "Yahuhanan Yukia"
       middle_name = "Sese"
@@ -728,7 +745,7 @@
 
     [params.semweb.publisher]
       name = "YourOnly.One"
-      sameas = "https://YourOnly.One"
+      sameas = "https://youronly.one"
 
     [params.verify]
       naver = "0212955cb24d6e2c67f92be3c7833cae8a98fa8e"
@@ -740,13 +757,13 @@
 
 
 [permalinks]
-	# use /:slug/ as it fallsback to /:title/ if not set
-	"/" = "/:slug/"
-	blog = "/:slug-:year:yearday/"
-	categories = "/cat/:slug/"
-	series = "/series/:slug/"
-	tags = "/tag/:slug/"
-	c = "/:sections/:slug-:year:yearday/"
+  # use /:slug/ as it fallsback to /:title/ if not set
+  "/" = "/:slug/"
+  blog = "/:slug-:year:yearday/"
+  categories = "/cat/:slug/"
+  series = "/series/:slug/"
+  tags = "/tag/:slug/"
+  c = "/:sections/:slug-:year:yearday/"
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
@@ -781,24 +798,24 @@
 
 
 [related]
-	threshold = 80
-	includeNewer = true
-	toLower = true
-	[[related.indices]]
-		name = "keywords"
-		weight = 100
-	[[related.indices]]
-		name = "date"
-		weight = 10
-	[[related.indices]]
-		name = "categories"
-		weight = 100
-	[[related.indices]]
-		name = "series"
-		weight = 100
-	[[related.indices]]
-		name = "tags"
-		weight = 50
+  threshold = 80
+  includeNewer = true
+  toLower = true
+  [[related.indices]]
+    name = "keywords"
+    weight = 100
+  [[related.indices]]
+    name = "date"
+    weight = 10
+  [[related.indices]]
+    name = "categories"
+    weight = 100
+  [[related.indices]]
+    name = "series"
+    weight = 100
+  [[related.indices]]
+    name = "tags"
+    weight = 50
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
@@ -816,9 +833,9 @@
 
 
 [taxonomies]
-	category = "categories"
-	series = "series"
-	tag = "tags"
+  category = "categories"
+  series = "series"
+  tag = "tags"
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
