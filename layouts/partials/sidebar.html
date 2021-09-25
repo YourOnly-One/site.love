@@ -55,11 +55,7 @@
     <div class="media mb-4">
       <div class="post-thumb-sm mr-3">
         {{/* YourOnly.One: changed */}}
-        <a href="{{ .Permalink }}">
-          {{ range first 1 (.Param "images") }}
-            <img class="mr-3 post-thumb-sm" src="{{ . | absURL }}">
-          {{ end }}
-        </a>
+        <a href="{{ .Permalink }}"><img class="mr-3 post-thumb-sm" src="{{ index .Params.images 0 | absURL }}" /></a>
       </div>
       <div class="media-body">
         <ul class="list-inline d-flex justify-content-between mb-2">

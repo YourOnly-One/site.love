@@ -1,3 +1,4 @@
+{{/* YourOnlyOne: THIS SHOWS IN TAXONOMY PAGE AND TERMS PAGE */}}
 {{ define "main" }}
 
 <!-- page-title -->
@@ -5,7 +6,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h4>{{.Title}}</h4>
+        {{- /* YourOnly.One: changed
+          <h4>{{.Title}}</h4>
+        */ -}}
+        <h4>{{if eq .Kind "taxonomy" }}{{ i18n .Data.Plural (len .Data.Terms) }}{{ else }}{{ .Title }}{{ end }}</h4>
       </div>
     </div>
   </div>
@@ -23,11 +27,13 @@
           {{ range $paginator.Pages }}
           <div class="col-sm-6 mb-5">
             <article class="text-center">
-              {{/* YourOnly.One: changed */}}
-              {{ range first 1 (.Param "images") }}
-                <img class="img-fluid mb-4" src="{{ . | absURL }}" alt="post-thumb">
-              {{ end }}
-              {{/* YourOnly.One: Categories changed to support multilang */}}
+              {{- /* YourOnly.One: changed
+                <img class="img-fluid mb-4" src="{{.Params.Image | absURL }}" alt="post-thumb">
+              */ -}}
+              <img class="img-fluid mb-4" src="{{ index (.Param "images") 0 | absURL }}" alt="post-thumb" />
+              {{- /* YourOnly.One: changed
+                <p class="text-uppercase mb-2">{{ i18n .Params.Categories }}</p>
+              */ -}}
               <p class="text-uppercase mb-2">{{ if .Params.categories }}{{ range ( .GetTerms "categories" ) }}{{ .LinkTitle }}{{ end }}{{ end }}</p>
               <h4 class="title-border"><a class="text-dark" href="{{.Permalink}}">{{.Title}}</a></h4>
               <p>{{ .Summary }}</p>
@@ -45,10 +51,10 @@
             <article data-file="{{.Permalink}}" data-target="article"
               class="article-full-width {{if not (modBool $i 2)}} article-right {{ end }}">
               <div class="post-image">
-                {{/* YourOnly.One: changed */}}
-                {{ range first 1 (.Param "images") }}
-                  <img class="img-fluid" src="{{ . | absURL }}" alt="post-thumb">
-                {{ end }}
+                {{- /* YourOnly.One: changed
+                  <img class="img-fluid" src="{{ .Params.Image | absURL }}" alt="post-thumb">
+                */ -}}
+                <img class="img-fluid" src="{{ index .Params.images 0 | absURL }}" alt="post-thumb">
               </div>
               <div class="post-content">
                 <ul class="list-inline d-flex justify-content-between border-bottom post-meta pb-2 mb-4">
