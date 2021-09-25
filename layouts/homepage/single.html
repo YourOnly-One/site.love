@@ -12,7 +12,9 @@
       {{ range where .Site.Pages ".Params.featured" true }}
       <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
         <article class="card bg-dark text-center text-white border-0 rounded-0">
-          <img class="card-img rounded-0 img-fluid w-100" src="{{.Params.cover | absURL}}" alt="post-thumb">
+          {{ range first 1 (.Param "images") }}
+            <img class="card-img rounded-0 img-fluid w-100" src="{{ . | absURL}}" alt="post-thumb">
+          {{ end }}
           <div class="card-img-overlay">
             <div class="card-content">
               {{- /* Categories changed to support multilang */ -}}
@@ -71,7 +73,9 @@
       {{ range site.RegularPages }}
       <div class="col-lg-4 col-sm-6 mb-5">
         <article class="text-center">
-          <img class="img-fluid mb-4" src="{{.Params.cover | absURL }}" alt="post-thumb">
+          {{ range first 1 (.Param "images") }}
+            <img class="img-fluid mb-4" src="{{ . | absURL }}" alt="post-thumb">
+          {{ end }}
           <p class="text-uppercase mb-2">{{range .Params.Categories}}{{. | humanize}}{{end}}</p>
           <h4 class="title-border"><a class="text-dark" href="{{.Permalink}}">{{.Title}}</a></h4>
           <p>{{.Summary}}</p>
@@ -89,7 +93,9 @@
         <article data-file="{{.Permalink}}" data-target="article"
           class="article-full-width {{if not (modBool $i 2)}} article-right {{ end }}">
           <div class="post-image">
-            <img class="img-fluid" src="{{ .Params.cover | absURL }}" alt="post-thumb">
+            {{ range first 1 (.Param "images") }}
+              <img class="img-fluid" src="{{ . | absURL }}" alt="post-thumb">
+            {{ end }}
           </div>
           <div class="post-content">
             <ul class="list-inline d-flex justify-content-between border-bottom post-meta pb-2 mb-4">
