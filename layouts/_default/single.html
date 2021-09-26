@@ -1,5 +1,5 @@
 {{ define "main" }}
-
+{{ $authorname := .Param "author.name" }}
 <!-- checking blog -->
 {{ if or (eq .Section "post") (eq .Section "posts") (eq .Section "blog") (eq .Section "blogs") (eq .Section "news") (eq .Section "categories") (eq .Section "tags") }}
 
@@ -25,7 +25,7 @@
             <li class="list-inline-item"><i class="ti-user mr-2"></i>Post by {{site.Params.author}}</li>
             <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ .PublishDate.Format "Jan 02, 2006" }}</li>
           */ -}}
-          <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} {{ .Param "author.name" }}</li>
+          <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} {{ $authorname }}</li>
           <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ .PublishDate.Format "2006-01-02 15:04 MST" }}</li>
         </ul>
         <article class="content">
@@ -57,7 +57,7 @@
         {{- /* YourOnlyOne: changed
           {{with .Params.image}}<img src="{{. | absURL }}" alt="{{site.Params.author}}" class="img-fluid w-100 mb-4">{{end}}
         */ -}}
-        {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ .Params.author.name }}" class="img-fluid w-100 mb-4">{{end}}
+        {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ $authorname }}" class="img-fluid w-100 mb-4">{{end}}
         <div class="content">{{ .Content }}</div>
       </div>
     </div>
