@@ -6,7 +6,7 @@ require (
 	github.com/YourOnly-One/hugo-atom-feed v0.0.0-20210910014300-e3dc5affdf0f
 	github.com/YourOnly-One/hugo-shortcodes v0.0.0-20210906082846-759c056ba3d0
 	github.com/YourOnly-One/hugo-structured-data v0.0.0-20210906092140-799dc15017b1
-	github.com/YourOnly-One/yoo-hugo-content v0.0.0-20210913132237-166a14db0b9f
-	github.com/YourOnly-One/yoo-hugo-defaults v0.0.0-20210916021545-e94f2add3591
-	github.com/themefisher/parsa-hugo v0.0.0-20210908073022-1e536d1a14cc
+	github.com/YourOnly-One/yoo-hugo-content v0.0.0-20210927115257-093ffe5e9136
+	github.com/YourOnly-One/yoo-hugo-defaults v0.0.0-20210927141041-b136c6c3ce8f
+	github.com/techmagus/hugo-theme-parsa v0.0.0-20210926052920-4d6e05da1a2c
 )
