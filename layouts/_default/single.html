@@ -35,6 +35,13 @@
           <img src="{{ index .Params.images 0 | absURL }}" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
           {{.Content}}
         </article>
+        <artcle class="content">
+          <!-- BGN: YourOnly.One Head-01-Top -->
+            {{- if templates.Exists "partials/youronly.one-post-02-btm.html" -}}
+              {{ partial "youronly.one-post-02-btm.html" . }}
+            {{- end }}
+          <!-- END: YourOnly.One Head-01-Top -->
+        </artcle>
         <article class="content" data-html2canvas-ignore>
           {{ if .Site.DisqusShortname }}
             {{ template "_internal/disqus.html" . }}
