@@ -7,7 +7,7 @@
     <div class="row featured-post-slider">
       {{- /*
       {{ $t := slice "featured" "showcase" }}
-      {{ range where .Site.Pages ".Params.featured" "intersect" $t }}
+      {{ range (where site.RegularPages "Type" "featured")}}
       */ -}}
       {{ range where .Site.Pages ".Params.featured" true }}
       <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
@@ -45,7 +45,7 @@
         <span class="font-secondary text-dark mr-3 mr-sm-5">Follow me :</span>
         <ul class="list-inline d-inline-block mb-5">
           {{ range site.Params.social }}
-          <li class="list-inline-item mx-3"><a href="{{.URL}}" class="text-dark"><i class="{{.icon}}"></i></a></li>
+          <li class="list-inline-item mx-3"><a href="{{ .link | safeURL }}" class="text-dark"><i class="{{.icon}}"></i></a></li>
           {{ end }}
         </ul>
       </div>
