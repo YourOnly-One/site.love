@@ -72,8 +72,9 @@
     {{- if isset site.Taxonomies "categories" }}
     {{- if not (eq (len site.Taxonomies.categories) 0) }}
     <ul class="list-inline tag-list">
+      {{/* YourOnly.One: changed */}}
       {{- range $name, $items := site.Taxonomies.categories }}
-      <li class="list-inline-item m-1"><a href="{{ "cat/" | relLangURL }}{{ $name | urlize | lower }}">{{ .Page.Title }}</a></li>
+      <li class="list-inline-item m-1"><a href="{{ "cat/" | relLangURL }}{{ .Page.Title | urlize | lower }}">{{ .Page.Title }}</a></li>
       {{- end }}
     </ul>
     {{- end }}
@@ -84,8 +85,9 @@
     {{- if isset site.Taxonomies "tags" }}
     {{- if not (eq (len site.Taxonomies.tags) 0) }}
     <ul class="list-inline tag-list">
+      {{/* YourOnly.One: changed */}}
       {{- range $name, $items := site.Taxonomies.tags }}
-      <li class="list-inline-item m-1"><a href="{{ "tag/" | relLangURL }}{{ $name | urlize | lower }}">{{ .Page.Title }}</a></li>
+      <li class="list-inline-item m-1"><a href="{{ "tag/" | relLangURL }}{{ .Page.Title | urlize | lower }}">{{ .Page.Title }}</a></li>
       {{- end }}
     </ul>
     {{- end }}
