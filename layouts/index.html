@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{/* YourOnly.One: This is the HOMEpage. */}}
 
 {{ if eq site.Params.layout "1" }}
 <!-- featured post -->
@@ -6,8 +7,8 @@
   <div class="container-fluid p-sm-0">
     <div class="row featured-post-slider">
       {{- /*
-      {{ $t := slice "featured" "showcase" }}
-      {{ range (where site.RegularPages "Type" "featured")}}
+        {{ $t := slice "featured" "showcase" }}
+        {{ range (where site.RegularPages "Type" "featured")}}
       */ -}}
       {{ range where .Site.Pages ".Params.featured" true }}
       <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
@@ -18,7 +19,7 @@
           {{ end }}
           <div class="card-img-overlay">
             <div class="card-content">
-              {{- /* Categories changed to support multilang */ -}}
+              {{/* Categories changed to support multilang */}}
               <p class="text-uppercase">{{ if .Params.categories }}{{ range ( .GetTerms "categories" ) }}{{ .LinkTitle }}{{ end }}{{ end }}</p>
               <h4 class="card-title mb-4"><a class="text-white" href="{{.Permalink}}">{{.Title}}</a></h4>
               <a class="btn btn-outline-light" href="{{.Permalink}}">{{ i18n "readmore" }}</a>
@@ -40,7 +41,8 @@
     <div class="row">
       <div class="col-lg-6 align-self-end">
         <h1 class="mb-0">Welcome</h1>
-        <h2 class="mb-100 title-border-lg">to <i>{{site.Params.author}} Blog</i></h2>
+        {{/* YourOnly.One: changed */}}
+        <h2 class="mb-100 title-border-lg">to <i>{{ $.Param "author.name" }} Blog</i></h2>
         <p class="mb-80 mr-5">{{site.Params.bio | markdownify }}</p>
         <span class="font-secondary text-dark mr-3 mr-sm-5">Follow me :</span>
         <ul class="list-inline d-inline-block mb-5">
@@ -50,7 +52,8 @@
         </ul>
       </div>
       <div class="col-lg-6 text-right">
-        <img class="img-fluid" src="{{site.Params.author_image | absURL}}" alt="banner-image">
+        {{/* YourOnly.One: changed */}}
+        <img class="img-fluid" src="{{ $.Param "author.avatar" | absURL}}" alt="banner-image">
       </div>
     </div>
   </div>
@@ -68,7 +71,8 @@
 <!-- blog post -->
 <section class="section">
   <div class="container">
-    {{ $paginator := .Paginate (where site.RegularPages "Type" "post") }}
+    {{/* YourOnlyOne: changed */}}
+    {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainTypes) }}
     {{ if eq site.Params.layout "1" }}
     <div class="row masonry-container">
       {{ range $paginator.Pages }}
@@ -78,7 +82,7 @@
           {{ range first 1 (.Param "images") }}
             <img class="img-fluid mb-4" src="{{ . | absURL }}" alt="post-thumb">
           {{ end }}
-          {{- /* Categories changed to support multilang */ -}}
+          {{/* Categories changed to support multilang */}}
           <p class="text-uppercase mb-2">{{ if .Params.categories }}{{ range ( .GetTerms "categories" ) }}{{ .LinkTitle }}{{ end }}{{ end }}</p>
           <h4 class="title-border"><a class="text-dark" href="{{.Permalink}}">{{.Title}}</a></h4>
           <p>{{.Summary}}</p>
