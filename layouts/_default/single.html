@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $authorname := .Param "author.name" }}
 <!-- checking blog -->
-{{ if or (eq .Section "post") (eq .Section "posts") (eq .Section "blog") (eq .Section "blogs") (eq .Section "news") (eq .Section "categories") (eq .Section "tags") }}
+{{ if or (in .Site.Params.mainTypes .Type) (eq .Section "categories") (eq .Section "tags") }}
 
 <!-- page-title -->
 <section class="section bg-secondary">
