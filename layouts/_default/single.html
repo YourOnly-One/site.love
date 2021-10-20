@@ -1,5 +1,6 @@
 {{ define "main" }}
-{{ $authorname := .Param "author.name" }}
+{{- $authors := .Site.Data.persons -}}
+{{- $siteAuthor := index $authors ($.Param "semweb.person") }}
 <!-- checking blog -->
 {{ if or (in .Site.Params.mainTypes .Type) (eq .Section "categories") (eq .Section "tags") }}
 
@@ -25,7 +26,12 @@
             <li class="list-inline-item"><i class="ti-user mr-2"></i>Post by {{site.Params.author}}</li>
             <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ .PublishDate.Format "Jan 02, 2006" }}</li>
           */ -}}
-          <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} {{ $authorname }}</li>
+          {{ with $.Param "author.person" }}
+            {{ $author := index $authors . }}
+            <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} {{ ($.Param "author.name") | default $author.name }}</li>
+          {{ else }}
+            <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} {{ $siteAuthor.name }}</li>
+          {{ end }}
           <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ .PublishDate.Format "2006-01-02 15:04 MST" }}</li>
         </ul>
         <article class="content">
@@ -64,7 +70,12 @@
         {{- /* YourOnlyOne: changed
           {{with .Params.image}}<img src="{{. | absURL }}" alt="{{site.Params.author}}" class="img-fluid w-100 mb-4">{{end}}
         */ -}}
-        {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ $authorname }}" class="img-fluid w-100 mb-4">{{end}}
+        {{ with $.Param "author.person" }}
+          {{ $author := index $authors . }}
+          {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ ($.Param "author.name") | default $author.name }}" class="img-fluid w-100 mb-4">{{end}}
+        {{ else }}
+          {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ $siteAuthor.name }}" class="img-fluid w-100 mb-4">{{end}}
+        {{ end }}
         <div class="content">{{ .Content }}</div>
       </div>
     </div>
