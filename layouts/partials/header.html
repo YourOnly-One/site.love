@@ -37,12 +37,12 @@
         }
       </style>
       <div class="item">
-        <a href="{{ .Permalink }}" lang="{{ .Site.Language.Lang }}" class="large-flag active" title="{{ .Site.Language.LanguageName }}">{{ .Site.Language.Params.languageflag }}</a>
+        <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="large-flag active" title="{{ .Site.Language.LanguageName }}">{{ .Site.Language.Params.languageflag }}</a>
       </div>
       {{ if .IsTranslated -}}
         {{ range .Translations }}
           <div class="item">
-            <a href="{{ .Permalink }}" lang="{{ .Lang }}" class="large-flag" title="{{ .Language.Params.LanguageName }}">{{ .Language.Params.languageflag }}</a>
+            <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="large-flag" title="{{ .Site.Language.LanguageName }}">{{ .Site.Language.Params.languageflag }}</a>
           </div>
         {{ end }}
       {{ else }}
