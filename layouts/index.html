@@ -12,7 +12,7 @@
       */ -}}
       {{ range where .Site.Pages ".Params.featured" true }}
       <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
-        <article class="card bg-dark text-center text-white border-0 rounded-0">
+        <article class="card bg-dark text-center text-white border-0 rounded-0" data-clarity-region="article">
           {{/* YourOnly.One: changed */}}
           {{ range first 1 (.Param "images") }}
             <img class="card-img rounded-0 img-fluid w-100" src="{{ . | absURL}}" alt="post-thumb">
@@ -77,7 +77,7 @@
     <div class="row masonry-container">
       {{ range $paginator.Pages }}
       <div class="col-lg-4 col-sm-6 mb-5">
-        <article class="text-center">
+        <article class="text-center" data-clarity-region="article">
           {{/* YourOnly.One: changed */}}
           {{ range first 1 (.Param "images") }}
             <img class="img-fluid mb-4" src="{{ . | absURL }}" alt="post-thumb">
@@ -98,7 +98,7 @@
       {{ range $i,$p := (where $paginator.Pages "Type" "post") }}
       <div class="col-12 mb-100">
         <article data-file="{{.Permalink}}" data-target="article"
-          class="article-full-width {{if not (modBool $i 2)}} article-right {{ end }}">
+          class="article-full-width {{if not (modBool $i 2)}} article-right {{ end }}" data-clarity-region="article">
           <div class="post-image">
             {{/* YourOnly.One: changed */}}
             {{ range first 1 (.Param "images") }}

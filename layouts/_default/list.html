@@ -26,7 +26,7 @@
         <div class="row masonry-container">
           {{ range $paginator.Pages }}
           <div class="col-sm-6 mb-5">
-            <article class="text-center">
+            <article class="text-center" data-clarity-region="article">
               {{- /* YourOnly.One: changed
                 <img class="img-fluid mb-4" src="{{.Params.Image | absURL }}" alt="post-thumb">
               */ -}}
@@ -49,7 +49,7 @@
           {{ range $i,$p := $paginator.Pages }}
           <div class="col-12 mb-100">
             <article data-file="{{.Permalink}}" data-target="article"
-              class="article-full-width {{if not (modBool $i 2)}} article-right {{ end }}">
+              class="article-full-width {{if not (modBool $i 2)}} article-right {{ end }}" data-clarity-region="article">
               <div class="post-image">
                 {{- /* YourOnly.One: changed
                   <img class="img-fluid" src="{{ .Params.Image | absURL }}" alt="post-thumb">
