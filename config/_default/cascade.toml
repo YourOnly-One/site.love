@@ -1,0 +1,5 @@
+images = ["https://rsc.youronly.one/img/y/Love_and_Relationship.webp"]
+  [_target]
+    kind = "page"
+    #lang = ""
+    #path = "/blog/**"
