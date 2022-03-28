@@ -39,6 +39,17 @@
       lang = "ko"
   # END: /love/ content
 
+  # BGN: /love/ fill gaps content
+    [[imports.mounts]]
+      source = "love/en-ph"
+      target = "content"
+      lang = "ja"
+    [[imports.mounts]]
+      source = "love/en-ph"
+      target = "content"
+      lang = "ko"
+  # END: /love/ fill gaps content
+
 
 # See: https://gohugo.io/hugo-modules/configuration/#module-config-mounts
 #   if you add a mounts section you should remove the old staticDir etc. settings.
