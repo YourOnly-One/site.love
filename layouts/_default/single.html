@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{- $datetimeformat := i18n "datetimeformat" -}}
 {{- $datapersons := .Site.Data.persons -}}
 {{- $semwebpersons := .Site.Params.semweb.persons -}}
 {{- $frontmatterpersons := .Params.authors }}
@@ -39,7 +40,7 @@
             {{- /* note: else if default Hugo 'author' param is used in frontmatter or config, display generic */}}
             <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} {{ .Param "author.name" }}</li>
           {{ end }}
-          <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ .PublishDate.Format "2006-01-02 15:04 MST" }}</li>
+          <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ time.Format $datetimeformat .PublishDate }}</li>
         </ul>
         <article class="content" data-clarity-region="article">
           {{- /* YourOnly.One: changed
