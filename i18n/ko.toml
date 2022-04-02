@@ -1,0 +1,12 @@
+# Translations for Hangugeo (Korean)
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# Basic
+[LatestPosts]
+other = "최근 게시물"
+
+[SocialMediaPages]
+other = "러브 타운"
+
+[Follow]
+other = "우리를 따르라"

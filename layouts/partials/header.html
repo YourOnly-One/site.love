@@ -1,0 +1,67 @@
+<header class="navigation">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    {{- /* We changed the logo link to support relLangURL */ -}}
+    <a class="navbar-brand" href="{{ "/" | relLangURL }}"><img class="img-fluid" src="{{ site.Params.logo | absURL }}" alt="{{site.Title}}"></a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navogation"
+      aria-controls="navogation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navogation">
+      <ul class="navbar-nav ml-auto">
+        {{ range site.Menus.main }}
+        {{ if .HasChildren }}
+        <li class="nav-item dropdown">
+          <a class="nav-link text-uppercase text-dark dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            {{ .Name }}
+          </a>
+          <div class="dropdown-menu" >
+            {{ range .Children }}
+            <a class="dropdown-item" href="{{ .URL | absURL }}">{{ .Name }}</a>
+            {{ end }}
+          </div>
+        </li>
+        {{ else }}
+        <li class="nav-item">
+          <a class="nav-link text-uppercase text-dark" href="{{ .URL | absURL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+      <style>
+        .large-flag { font-size: 1.7em; }
+        .no-lang {
+          cursor: not-allowed;
+          opacity:  .30;
+        }
+      </style>
+      <div class="item">
+        <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="large-flag active" title="{{ .Site.Language.LanguageName }}">{{ .Site.Language.Params.languageflag }}</a>
+      </div>
+      {{ if .IsTranslated -}}
+        {{ range .Translations }}
+          <div class="item">
+            <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="large-flag" title="{{ .Site.Language.LanguageName }}">{{ .Site.Language.Params.languageflag }}</a>
+          </div>
+        {{ end }}
+      {{ else }}
+        {{ range .Site.Languages }}
+          {{ if not (eq .Lang $.Site.Language.Lang) }}
+            <div class="item">
+              <span class="large-flag no-lang" title="{{ .Params.LanguageName }}">{{ .Params.languageflag }}</span>
+            </div>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      {{ if site.Params.search }}
+      {{ "<!-- search -->" | safeHTML }}
+      {{/* YourOnly.One: changed */}}
+      <form class="form-inline position-relative ml-lg-4" action="{{ "search/" | relLangURL }}">
+        <input class="form-control px-0 w-100" type="search" placeholder="{{ i18n "search" }}" id="search-query" name="s">
+        <button class="search-icon" type="submit"><i class="ti-search text-dark"></i></button>
+      </form>
+      {{ end }}
+    </div>
+  </nav>
+</header>

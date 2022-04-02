@@ -1,0 +1,150 @@
+#mainSections = ["blog", "posts"]                                             # Hugo default
+mainTypes = ["article", "sitepage", "review"]                                                # YourOnly.One
+
+subdir = "love"
+rssfull = "true"
+faviconcache = "fmgy"
+faviconbuster = "TimmieIsMyFate"
+jquerycdn = true
+websubhubs = ["https://pubsubhubbub.appspot.com/", "https://youronlyone.superfeedr.com/", "https://pubsubhubbub.superfeedr.com/", "https://websubhub.com/hub"]
+
+googleadsense = "ca-pub-8360283248006398"
+
+### BGN: Structured Data ###
+	siteStartYear = 2008
+
+	description = "Unlocking the secrets to a fruitful relationship and unconditional love."
+	license = "https://im.youronly.one/p/legal-notice/"
+	keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Love and Relationship", "Love & Relationship"] # Can be overriden per page
+	images = ["https://rsc.youronly.one/img/y/Love_and_Relationship.webp"]
+	#copyright = ""
+### END: Structured Data ###
+
+### BGN: Theme Settings ###
+	logo = "https://rsc.youronly.one/img/y/Love_and_Relationship.webp"
+	home = "Home"
+	# theme layout ( two layout is available, "1" and "2" )
+	layout = "1"
+	# Preloader
+	#preloader = true
+	# search
+	search = true
+	# about author
+	#author_image = ""
+	#bio = ""
+	# Contact info
+	#mobile = ""
+	#email = ""
+	#address = ""
+	# Contact Form Action
+	#contact_form_action = "#"
+
+	# CSS Plugins
+	[[plugins.css]]
+	link = "plugins/bootstrap/bootstrap.min.css"
+	[[plugins.css]]
+	link = "plugins/slick/slick.css"
+	[[plugins.css]]
+	link = "plugins/themify-icons/themify-icons.css"
+
+	# JS Plugins
+	[[plugins.js]]
+	link = "plugins/jQuery/jquery.min.js"
+	[[plugins.js]]
+	link = "plugins/bootstrap/bootstrap.min.js"
+	[[plugins.js]]
+	link = "plugins/slick/slick.min.js"
+	[[plugins.js]]
+	link = "plugins/headroom/headroom.js"
+	[[plugins.js]]
+	link = "plugins/instafeed/instafeed.min.js"
+	[[plugins.js]]
+	link = "plugins/masonry/masonry.js"
+	[[plugins.js]]
+	link = "plugins/reading-time/readingTime.min.js"
+	[[plugins.js]]
+	link = "plugins/smooth-scroll/smooth-scroll.js"
+	[[plugins.js]]
+	link = "plugins/search/fuse.min.js"
+	[[plugins.js]]
+	link = "plugins/search/mark.js"
+	[[plugins.js]]
+	link = "plugins/search/search.js"
+
+	# Instagram feed
+	[instafeed]
+	enable = false
+	access_token = "183794425326191|5734e2f164e94e3247f0f1499061c7b7"
+
+	# cookies
+	[cookies]
+	enable = false
+	expire_days = 2
+
+	# social site
+	[[social]]
+	icon = "fa fa-mastodon"
+	link = "https://mastodon.social/@YourOnlyOne"
+
+	[[social]]
+	icon = "ti-facebook"
+	link = "https://facebook.com/YourOnly.ONE.ofcl"
+
+	[[social]]
+	icon = "ti-facebook"
+	link = "https://facebook.com/YourOnlyOne7"
+
+	[[social]]
+	icon = "ti-twitter-alt"
+	link = "https://twitter.com/YourOnlyONEofcl"
+
+	[[social]]
+	icon = "ti-instagram"
+	link = "https://instagram.com/YourOnly.One"
+
+	[[social]]
+	icon = "ti-youtube"
+	link = "https://youtube.com/YourOnlyONEofcl"
+### END: Theme Settings ###
+
+### BGN: Other Settings ###
+	[semweb]
+		org = "yelosan"
+
+		#issn = ""
+		acquirelicensepage = "https://youronly.one/p/legal-notice/"
+		copyrightnotice = "Copyleft 🄯 CC-BY-SA 4.0 International by JC John Sese Cuneta"
+		credittext = "YourOnly.One (https://youronly.one)"
+		datefirstpublished = "2008-02-23"
+		isblog = true
+		license = "https://youronly.one/p/legal-notice/"
+		publisher = "https://yelosan.youronly.one/"
+		sameas = [
+			"https://mastodon.social/@youronlyone",
+			"https://pixelfed.social/youronlyone",
+			"https://youtube.com/YourOnlyONEofcl",
+			"https://twitter.com/YourOnlyONEofcl",
+			"https://instagram.com/YourOnly.One",
+			"https://facebook.com/YourOnly.ONE.ofcl"
+		]
+
+		[[semweb.persons]]
+			person = "yuki"
+			#id = ""
+			#name = ""ᜌᜓᜃᜒ (Yuki | 雪亮)"
+			#url = ""
+			#avatar = ""
+			#rel = "noopener external nofollow"
+
+	[verify]
+		flattr = "4j1gl5"
+		naver = "0212955cb24d6e2c67f92be3c7833cae8a98fa8e"
+		wot = "06c7ef6e7986586661ef"
+		ocs = "c563648adcfa021a0dfd3d3d8f0be64a"
+		followit = "DVn4NQZLUqtYF859ARgM"
+
+	[analytics]
+		microanalyticsio = "ZwSg9rf6GA"
+		cfwebanalytics = "07a05e5302d1458da3561ce41791e284"
+		microsoftclarity = "63ddi0b99e"
+### END: Other Settings ###

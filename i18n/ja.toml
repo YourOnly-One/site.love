@@ -1,0 +1,12 @@
+# Translations for Nihongo (Japanese)
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# Basic
+[LatestPosts]
+other = "最新の投稿"
+
+[SocialMediaPages]
+other = "ラブタウン"
+
+[Follow]
+other = "フォローする"

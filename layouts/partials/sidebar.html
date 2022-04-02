@@ -1,0 +1,122 @@
+<div class="col-lg-4">
+  <div class="widget search-box">
+    <form action="{{ site.BaseURL }}/search">
+      <i class="ti-search"></i>
+      {{/* YourOnly.One: added multilingual support */}}
+      <input class="form-control border-0 pl-5" type="search" placeholder="{{ i18n "search" }}" id="search-query" name="s">
+    </form>
+  </div>
+
+  <div id="Mabuhay_Clock_Flag" class="widget">
+    <div class="txt_center margin_bottom_block_end" lang="fil-Tglg" style="font-size: 4em; margin-top: 0.3em; margin-block-start: 0.3em; margin-bottom: 0.7em; margin-block-end: 0.7em;">ᜋᜊᜓᜑᜌ᜔</div>
+    <div class="txt_center"><iframe src="https://freesecure.timeanddate.com/clock/i7bkql2t/n1440/tlkr47/fn8/fs20/fc00de23/tc000/pct/ftb/bas7/bat4/bac00de23/pa10/tt0/tw0/tm3/td2/th1/ts1/ta1/tb4" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen" frameborder="0" width="155" height="80" allowtransparency="true"></iframe></div>
+    <div class="txt_center" style="font-size: 7em; height: 1.20em;"><span class="unicode_emoji">&#x1F1F5;&#x1F1ED;</span></div>
+  </div>
+  <div id="follow_buttons-Love_Towns" class="widget">
+    <h6 class="mb-4">{{- T "SocialMediaPages" }}</h6>
+    <div class="txt_center">
+      <a href="https://mastodon.social/@youronlyone" rel="me noopener noreferrer external" aria-label="Follow us on the fediverse" class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x text-mastodon" aria-hidden="true"></i><i class="fa fa-mastodon fa-stack-1x fa-inverse" aria-hidden="true" title="Follow us on the fediverse"></i></a>
+      <a href="https://facebook.com/YourOnly.ONE.ofcl" rel="me noopener noreferrer external" aria-label="Like us on Facebook" class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x text-facebook" aria-hidden="true"></i><i class="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true" title="Like us on Facebook"></i></a><br/>
+      <a href="https://facebook.com/YourOnlyOne7" rel="me noopener noreferrer external" aria-label="Like us on Facebook" class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x text-facebook" aria-hidden="true"></i><i class="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true" title="Like us on Facebook"></i></a>
+      <a href="https://twitter.com/YourOnlyONEofcl" rel="me noopener noreferrer external" aria-label="Follow us on Twitter" class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x text-twitter" aria-hidden="true"></i><i class="fa fa-twitter fa-stack-1x fa-inverse" aria-hidden="true" title="Follow us on Twitter"></i></a>
+    </div>
+  </div>
+  <div id="Now_Playing-LastFM" class="widget">
+    <h6 class="mb-4">{{- T "nowplaying" }}</h6>
+    <!--
+      Developed by Prashant Shrestha
+      + https://prashant.me
+    -->
+    <!--
+      * Modified by ᜌᜓᜃᜒ (Yuki ・ 雪亮) 🇵🇭
+      *   - https://YourOnly.One
+      *
+      * 2021-01-31:
+      *   - Added trackalbum
+      *   - Moved emoji outside of js file into HTML area
+      * 2021-01-30: Switched to Emoji instead of icon files
+    --->
+    <link rel="stylesheet" property="stylesheet" href="https://rsc.youronly.one/css/LastFM-NowPlaying.min.css" />
+    <script src="https://rsc.youronly.one/js/LastFM-NowPlaying.min.js" defer="defer"></script>
+    <div class="nowplayingcard">
+      <div class="nowplayingcontainer-inner">
+        <img id="trackart" src="#">
+        <div class="trackInfo">
+          <span class='emoji'>🎧</span><a id="tracktitle"></a><br/>
+          <span class='emoji'>📀</span><a id="trackalbum"></a><br/>
+          <span class='emoji'>🎤</span><a id="trackartist"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="widget">
+    {{/* YourOnly.One: added multilingual support */}}
+    <h6 class="mb-4">{{- T "LatestPosts" }}</h6>
+    {{/* YourOnly.One: changed */}}
+    {{ range first 3 ( where site.Pages "Type" .Type) }}
+    <div class="media mb-4">
+      <div class="post-thumb-sm mr-3">
+        {{/* YourOnly.One: changed */}}
+        <a href="{{ .Permalink }}"><img class="mr-3 post-thumb-sm" src="{{ index (.Param "images") 0 | absURL }}" /></a>
+      </div>
+      <div class="media-body">
+        <ul class="list-inline d-flex justify-content-between mb-2">
+          {{/* YourOnly.One: removed author display */}}
+          {{- /* <li class="list-inline-item">Post By {{site.Params.author}}</li> */ -}}
+          {{/* YourOnly.One: changed to ISO datetime */}}
+          <li class="list-inline-item">{{ .PublishDate.Format "2006-01-02" }}</li>
+        </ul>
+        <h6><a class="text-dark" href="{{ .Permalink }}">{{.Title}}</a></h6>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <div id="bookmarks" class="widget">
+    <h6 class="mb-4">{{- T "bookmarks" }}</h6>
+    <ul class="tag-list">
+      <li class="list-inline-item m-1"><a href="https://im.youronly.one/p/linklist/" rel="me noopener">YourOnly.One Linklist</a></li>
+      <li class="list-inline-item m-1"><a href="https://im.youronly.one/techmagus/linklists-are-back-2021353/" rel="me noopener">Linklists Are Back</a></li>
+      <li class="list-inline-item m-1"><a href="https://semweb.youronly.one" rel="me noopener">Semantic Web for Hugo</a></li>
+    </ul>
+  </div>
+  <div id="yuki_network" class="widget">
+    <h6 class="mb-4">{{- T "yukinetwork" }}</h6>
+    <ul class="tag-list">
+      <li class="list-inline-item m-1"><a href="https://im.youronly.one/snoworld/" rel="me noopener">Snoworld</a></li>
+      <li class="list-inline-item m-1"><a href="https://im.youronly.one/way/" rel="me noopener">Way of Believers</a></li>
+      <li class="list-inline-item m-1"><a href="https://im.youronly.one/techmagus/" rel="me noopener">techmagus</a></li>
+      <li class="list-inline-item m-1"><a href="https://im.youronly.one/yuki/" rel="me noopener">YOOki Chronicles</a></li>
+    </ul>
+  </div>
+
+  <div class="widget">
+    {{/* YourOnly.One: added multiplingual support */}}
+    <h6 class="mb-4">{{- T "allCategories" }}</h6>
+    {{- if isset site.Taxonomies "categories" }}
+    {{- if not (eq (len site.Taxonomies.categories) 0) }}
+    <ul class="list-inline tag-list">
+      {{- range $name, $items := site.Taxonomies.categories }}
+      {{/* YourOnly.One: changed */}}
+      <li class="list-inline-item m-1"><a href="{{ "cat/" | relLangURL }}{{ .Page.Title | urlize | lower }}/">{{ .Page.Title }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- end }}
+  </div>
+  <div class="widget">
+    {{/* YourOnly.One: added multiplingual support */}}
+    <h6 class="mb-4">{{- T "allTags" -}}</h6>
+    {{- if isset site.Taxonomies "tags" }}
+    {{- if not (eq (len site.Taxonomies.tags) 0) }}
+    <ul class="list-inline tag-list">
+      {{- range $name, $items := site.Taxonomies.tags }}
+      {{/* YourOnly.One: changed */}}
+      <li class="list-inline-item m-1"><a href="{{ "tag/" | relLangURL }}{{ .Page.Title | urlize | lower }}/">{{ .Page.Title }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- end }}
+  </div>
+</div>

@@ -1,0 +1,23 @@
+  {
+  "name": "Love and Relationship",
+  "short_name": "Love",
+  "description": "Unlocking the secrets to a fruitful relationship and unconditional love.",
+  "dir": "auto",
+  "lang": "en-PH",
+  "categories": ["education", "relationships"],
+  "display": "minimal-ui",
+  "scope": "https://im.youronly.one/love/",
+  "start_url": "https://im.youronly.one/love/",
+  "icons": [
+    {
+      "src": "https://rsc.YourOnly.One/favicon/love/android-chrome-192x192.png?fmgy=ForeverTimmie",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://rsc.YourOnly.One/favicon/love/android-chrome-512x512.png?fmgy=ForeverTimmie",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

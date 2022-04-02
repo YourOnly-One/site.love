@@ -1,0 +1,12 @@
+# Translations for Philippine English
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# Basic
+[LatestPosts]
+other = "Latest Posts"
+
+[SocialMediaPages]
+other = "Love Towns"
+
+[Follow]
+other = "Follow"
