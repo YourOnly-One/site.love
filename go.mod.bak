@@ -1,4 +1,4 @@
-module love
+module gitlab.com/youronlyone/site.love
 
 go 1.18
 
