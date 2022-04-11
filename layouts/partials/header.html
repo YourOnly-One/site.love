@@ -29,13 +29,6 @@
         {{ end }}
         {{ end }}
       </ul>
-      <style>
-        .large-flag { font-size: 1.7em; }
-        .no-lang {
-          cursor: not-allowed;
-          opacity:  .30;
-        }
-      </style>
       <div class="item">
         <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="large-flag active" title="{{ .Site.Language.LanguageName }}">{{ .Site.Language.Params.languageflag }}</a>
       </div>
