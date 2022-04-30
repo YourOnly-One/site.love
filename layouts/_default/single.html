@@ -22,7 +22,7 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="h-entry col-lg-8">
+      <div class="h-entry col-lg-8" data-clarity-region="article">
         <ul class="list-inline d-flex justify-content-between py-3">
           {{- /* YourOnly.One: changed
             <li class="list-inline-item"><i class="ti-user mr-2"></i>Post by {{site.Params.author}}</li>
@@ -42,7 +42,7 @@
           {{ end }}
           <li class="list-inline-item"><i class="ti-calendar mr-2"></i><time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .Date }}</time></li>
         </ul>
-        <article class="e-content content" data-clarity-region="article">
+        <article class="e-content content">
           {{- /* YourOnly.One: changed
             <img src="{{.Params.Image | absURL }}" alt="post-thumb" class="u-featured img-fluid rounded float-left mr-5 mb-4">
           */ -}}
@@ -74,7 +74,7 @@
           {{ template "_internal/webmention.html" . }}
           <div id="webmentions"></div>
         </article>
-        <article class="content" data-clarity-region="article" data-html2canvas-ignore>
+        <article class="content" data-html2canvas-ignore>
           {{ if .Site.DisqusShortname }}
             {{ template "_internal/disqus.html" . }}
           {{ end }}
@@ -91,7 +91,7 @@
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="h-entry col-lg-12">
+      <div class="h-entry col-lg-12" data-clarity-region="article">
         <h2 class="p-name mb-4">{{.Title }}</h2>
         {{- /* YourOnlyOne: changed
           {{with .Params.image}}<img src="{{. | absURL }}" alt="{{site.Params.author}}" class="img-fluid w-100 mb-4">{{end}}
@@ -108,7 +108,7 @@
           {{- /* note: else if default Hugo 'author' param is used in frontmatter or config, display generic */}}
           {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ .Param "author.name" }}" class="u-photo img-fluid w-100 mb-4">{{end}}
         {{ end }}
-        <div class="e-content content" data-clarity-region="article">{{ .Content }}</div>
+        <div class="e-content content">{{ .Content }}</div>
       </div>
     </div>
   </div>
