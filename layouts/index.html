@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{/* YourOnly.One: This is the HOMEpage. */}}
+{{- $datetimeformat := i18n "datetimeformat" -}}
 
 {{ if eq site.Params.layout "1" }}
 <!-- featured post -->
@@ -12,16 +13,16 @@
       */ -}}
       {{ range where .Site.Pages ".Params.featured" true }}
       <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0 px-1">
-        <article class="card bg-dark text-center text-white border-0 rounded-0" data-clarity-region="article">
+        <article class="h-entry card bg-dark text-center text-white border-0 rounded-0" data-clarity-region="article">
           {{/* YourOnly.One: changed */}}
           {{ range first 1 (.Param "images") }}
-            <img class="card-img rounded-0 img-fluid w-100" src="{{ . | absURL}}" alt="post-thumb">
+            <img class="u-featured card-img rounded-0 img-fluid w-100" src="{{ . | absURL}}" alt="post-thumb">
           {{ end }}
           <div class="card-img-overlay">
-            <div class="card-content">
+            <div class="e-content card-content">
               {{/* Categories changed to support multilang */}}
-              <p class="text-uppercase">{{ if .Params.categories }}{{ range ( .GetTerms "categories" ) }}{{ .LinkTitle }}{{ end }}{{ end }}</p>
-              <h4 class="card-title mb-4"><a class="text-white" href="{{.Permalink}}">{{.Title}}</a></h4>
+              <p class="p-category text-uppercase" rel="category">{{ if .Params.categories }}{{ range ( .GetTerms "categories" ) }}{{ .LinkTitle }}{{ end }}{{ end }}</p>
+              <h4 class="p-name card-title mb-4"><a class="u-url text-white" href="{{.Permalink}}" rel="bookmark">{{.Title}}</a></h4>
               <a class="btn btn-outline-light" href="{{.Permalink}}">{{ i18n "readmore" }}</a>
             </div>
           </div>
@@ -77,15 +78,15 @@
     <div class="row masonry-container">
       {{ range $paginator.Pages }}
       <div class="col-lg-4 col-sm-6 mb-5">
-        <article class="text-center" data-clarity-region="article">
+        <article class="h-entry text-center" data-clarity-region="article">
           {{/* YourOnly.One: changed */}}
           {{ range first 1 (.Param "images") }}
-            <img class="img-fluid mb-4" src="{{ . | absURL }}" alt="post-thumb">
+            <img class="u-featured img-fluid mb-4" src="{{ . | absURL }}" alt="post-thumb">
           {{ end }}
           {{/* Categories changed to support multilang */}}
-          <p class="text-uppercase mb-2">{{ if .Params.categories }}{{ range ( .GetTerms "categories" ) }}{{ .LinkTitle }}{{ end }}{{ end }}</p>
-          <h4 class="title-border"><a class="text-dark" href="{{.Permalink}}">{{.Title}}</a></h4>
-          <p>{{.Summary}}</p>
+          <p class="p-category text-uppercase mb-2" rel="category">{{ if .Params.categories }}{{ range ( .GetTerms "categories" ) }}{{ .LinkTitle }}{{ end }}{{ end }}</p>
+          <h4 class="p-name title-border"><a class="u-url text-dark" href="{{.Permalink}}" rel="bookmark">{{.Title}}</a></h4>
+          <p class="p-summary">{{.Summary}}</p>
           <a href="{{.Permalink}}" class="btn btn-transparent">{{ i18n "readmore" }}</a>
         </article>
       </div>
@@ -98,20 +99,20 @@
       {{ range $i,$p := (where $paginator.Pages "Type" "post") }}
       <div class="col-12 mb-100">
         <article data-file="{{.Permalink}}" data-target="article"
-          class="article-full-width {{if not (modBool $i 2)}} article-right {{ end }}" data-clarity-region="article">
+          class="h-entry article-full-width {{if not (modBool $i 2)}} article-right {{ end }}" data-clarity-region="article">
           <div class="post-image">
             {{/* YourOnly.One: changed */}}
             {{ range first 1 (.Param "images") }}
-              <img class="img-fluid" src="{{ . | absURL }}" alt="post-thumb">
+              <img class="u-featured img-fluid" src="{{ . | absURL }}" alt="post-thumb">
             {{ end }}
           </div>
-          <div class="post-content">
+          <div class="e-content post-content">
             <ul class="list-inline d-flex justify-content-between border-bottom post-meta pb-2 mb-4">
-              <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ .PublishDate.Format "Jan 02, 2006" }}</li>
+              <li class="list-inline-item"><i class="ti-calendar mr-2"></i><time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .Date }}</time></li>
               <li class="list-inline-item"><i class="ti-alarm-clock mr-2"></i><span class="eta"></span> read</li>
             </ul>
-            <h4 class="mb-4"><a href="{{.Permalink}}" class="text-dark">{{ .Title }}</a></h4>
-            <p class="mb-0 post-summary">{{.Summary }}</p>
+            <h4 class="p-name mb-4"><a href="{{.Permalink}}" class="u-url text-dark" rel="bookmark">{{ .Title }}</a></h4>
+            <p class="p-summary mb-0 post-summary">{{.Summary }}</p>
             <a class="btn btn-transparent mb-4" href="{{.Permalink}}">Continue...</a>
           </div>
         </article>

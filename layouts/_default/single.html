@@ -10,8 +10,8 @@
 <section class="section bg-secondary">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
-        <h4>{{ .Title }}</h4>
+      <div class="h-entry col-lg-12">
+        <h4 class="p-name">{{ .Title }}</h4>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-lg-8">
+      <div class="h-entry col-lg-8">
         <ul class="list-inline d-flex justify-content-between py-3">
           {{- /* YourOnly.One: changed
             <li class="list-inline-item"><i class="ti-user mr-2"></i>Post by {{site.Params.author}}</li>
@@ -30,23 +30,23 @@
           */ -}}
           {{ if $frontmatterpersons }}{{ range $i, $frontmatterperson := index $frontmatterpersons }}{{ $dataperson := index $datapersons $frontmatterperson.person }}{{ if $i }}, {{ end }}
             {{- /* note: if [[authors]] is set in frontmatter, use this to display a list of persons with fallback to /data/persons/ if present */}}
-            <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} {{ or ($frontmatterperson.name) ($dataperson.name) }}</li>
+            <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} <address class="p-author h-card"><span class="p-name" rel="author">{{ or ($frontmatterperson.name) ($dataperson.name) }}</span></address></li>
             {{ end }}
           {{ else if $semwebpersons }}{{ range $i, $semwebperson := index $semwebpersons }}{{ $dataperson := index $datapersons $semwebperson.person }}{{ if $i }}, {{ end }}
             {{- /* note: else if [[semweb.persons]] is set in config file, use it to display a list of persons with fallback to /data/persons/ if present */}}
-            <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} {{ or ($semwebperson.name) ($dataperson.name) }}</li>
+            <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} <address class="p-author h-card"><span class="p-name" rel="author">{{ or ($semwebperson.name) ($dataperson.name) }}</span></address></li>
             {{ end }}
           {{ else if .Param "author" }}
             {{- /* note: else if default Hugo 'author' param is used in frontmatter or config, display generic */}}
-            <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} {{ .Param "author.name" }}</li>
+            <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ i18n "postby" }} <address class="p-author h-card"><span class="p-name" rel="author">{{ .Param "author.name" }}</span></address></li>
           {{ end }}
-          <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ time.Format $datetimeformat .PublishDate }}</li>
+          <li class="list-inline-item"><i class="ti-calendar mr-2"></i><time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .Date }}</time></li>
         </ul>
-        <article class="content" data-clarity-region="article">
+        <article class="e-content content" data-clarity-region="article">
           {{- /* YourOnly.One: changed
-            <img src="{{.Params.Image | absURL }}" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
+            <img src="{{.Params.Image | absURL }}" alt="post-thumb" class="u-featured img-fluid rounded float-left mr-5 mb-4">
           */ -}}
-          <img src="{{ index .Params.images 0 | absURL }}" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
+          <img src="{{ index .Params.images 0 | absURL }}" alt="post-thumb" class="u-featured img-fluid rounded float-left mr-5 mb-4">
           {{- /* BGN: YourOnly.One Content-PartOf */ -}}
             {{- if templates.Exists "partials/youronly.one-content-partof.html" -}}
               {{ partial "youronly.one-content-partof.html" . }}
@@ -70,6 +70,10 @@
             {{- end }}
           <!-- END: YourOnly.One Head-01-Top -->
         </artcle>
+        <article class="content" data-html2canvas-ignore>
+          {{ template "_internal/webmention.html" . }}
+          <div id="webmentions"></div>
+        </article>
         <article class="content" data-clarity-region="article" data-html2canvas-ignore>
           {{ if .Site.DisqusShortname }}
             {{ template "_internal/disqus.html" . }}
@@ -87,24 +91,24 @@
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
-        <h2 class="mb-4">{{.Title }}</h2>
+      <div class="h-entry col-lg-12">
+        <h2 class="p-name mb-4">{{.Title }}</h2>
         {{- /* YourOnlyOne: changed
           {{with .Params.image}}<img src="{{. | absURL }}" alt="{{site.Params.author}}" class="img-fluid w-100 mb-4">{{end}}
         */ -}}
         {{ if $frontmatterpersons }}{{ range $i, $frontmatterperson := index $frontmatterpersons }}{{ $dataperson := index $datapersons $frontmatterperson.person }}{{ if $i }}, {{ end }}
           {{- /* note: if [[authors]] is set in frontmatter, use this to display a list of persons with fallback to /data/persons/ if present */}}
-          {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ or ($frontmatterperson.name) ($dataperson.name) }}" class="img-fluid w-100 mb-4">{{end}}
+          {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ or ($frontmatterperson.name) ($dataperson.name) }}" class="u-photo img-fluid w-100 mb-4">{{end}}
           {{ end }}
         {{ else if $semwebpersons }}{{ range $i, $semwebperson := index $semwebpersons }}{{ $dataperson := index $datapersons $semwebperson.person }}{{ if $i }}, {{ end }}
           {{- /* note: else if [[semweb.persons]] is set in config file, use it to display a list of persons with fallback to /data/persons/ if present */}}
-          {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ or ($semwebperson.name) ($dataperson.name) }}" class="img-fluid w-100 mb-4">{{end}}
+          {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ or ($semwebperson.name) ($dataperson.name) }}" class="u-photo img-fluid w-100 mb-4">{{end}}
           {{ end }}
         {{ else if .Param "author" }}
           {{- /* note: else if default Hugo 'author' param is used in frontmatter or config, display generic */}}
-          {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ .Param "author.name" }}" class="img-fluid w-100 mb-4">{{end}}
+          {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ .Param "author.name" }}" class="u-photo img-fluid w-100 mb-4">{{end}}
         {{ end }}
-        <div class="content" data-clarity-region="article">{{ .Content }}</div>
+        <div class="e-content content" data-clarity-region="article">{{ .Content }}</div>
       </div>
     </div>
   </div>

@@ -1,3 +1,4 @@
+{{- $datetimeformat := i18n "datetimeformat" -}}
 <div class="col-lg-4">
   <div class="widget search-box">
     <form action="{{ site.BaseURL }}/search">
@@ -55,19 +56,19 @@
     <h6 class="mb-4">{{- T "LatestPosts" }}</h6>
     {{/* YourOnly.One: changed */}}
     {{ range first 3 ( where site.Pages "Type" .Type) }}
-    <div class="media mb-4">
+    <div class="h-entry media mb-4">
       <div class="post-thumb-sm mr-3">
         {{/* YourOnly.One: changed */}}
-        <a href="{{ .Permalink }}"><img class="mr-3 post-thumb-sm" src="{{ index (.Param "images") 0 | absURL }}" /></a>
+        <a href="{{ .Permalink }}"><img class="u-featured mr-3 post-thumb-sm" src="{{ index (.Param "images") 0 | absURL }}" /></a>
       </div>
       <div class="media-body">
         <ul class="list-inline d-flex justify-content-between mb-2">
           {{/* YourOnly.One: removed author display */}}
           {{- /* <li class="list-inline-item">Post By {{site.Params.author}}</li> */ -}}
           {{/* YourOnly.One: changed to ISO datetime */}}
-          <li class="list-inline-item">{{ .PublishDate.Format "2006-01-02" }}</li>
+          <li class="list-inline-item"><time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .Date }}</time></li>
         </ul>
-        <h6><a class="text-dark" href="{{ .Permalink }}">{{.Title}}</a></h6>
+        <h6 class="p-name"><a class="u-url text-dark" href="{{ .Permalink }}" rel="bookmark">{{.Title}}</a></h6>
       </div>
     </div>
     {{ end }}
