@@ -4,12 +4,12 @@
       {{ partial "youronly.one-head-01-top.html" . }}
     {{- end }}
   <!-- END: YourOnly.One Head-01-Top -->
-  <title>{{ site.Title }}</title>
+  <title class="p-name">{{ site.Title }}</title>
 
   {{- /* We already have this
     {{ "<!-- mobile responsive meta -->" | safeHTML }}
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}" class="p-summary">
     {{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 
     {{ hugo.Generator }}

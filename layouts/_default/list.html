@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{/* YourOnlyOne: THIS SHOWS IN TAXONOMY PAGE AND TERMS PAGE */}}
+{{- $datetimeformat := i18n "datetimeformat" -}}
 
 <!-- page-title -->
 <section class="section bg-secondary">
@@ -26,17 +27,17 @@
         <div class="row masonry-container">
           {{ range $paginator.Pages }}
           <div class="col-sm-6 mb-5">
-            <article class="text-center" data-clarity-region="article">
+            <article class="h-entry text-center" data-clarity-region="article">
               {{- /* YourOnly.One: changed
-                <img class="img-fluid mb-4" src="{{.Params.Image | absURL }}" alt="post-thumb">
+                <img class="u-featured img-fluid mb-4" src="{{.Params.Image | absURL }}" alt="post-thumb">
               */ -}}
-              <img class="img-fluid mb-4" src="{{ index (.Param "images") 0 | absURL }}" alt="post-thumb" />
+              <img class="u-featured img-fluid mb-4" src="{{ index (.Param "images") 0 | absURL }}" alt="post-thumb" />
               {{- /* YourOnly.One: changed
-                <p class="text-uppercase mb-2">{{ i18n .Params.Categories }}</p>
+                <p class="p-category text-uppercase mb-2" rel="category">{{ i18n .Params.Categories }}</p>
               */ -}}
-              <p class="text-uppercase mb-2">{{ if .Params.categories }}{{ range ( .GetTerms "categories" ) }}{{ .LinkTitle }}{{ end }}{{ end }}</p>
-              <h4 class="title-border"><a class="text-dark" href="{{.Permalink}}">{{.Title}}</a></h4>
-              <p>{{ .Summary }}</p>
+              <p class="p-category text-uppercase mb-2" rel="category">{{ if .Params.categories }}{{ range ( .GetTerms "categories" ) }}{{ .LinkTitle }}{{ end }}{{ end }}</p>
+              <h4 class="p-name title-border"><a class="u-url text-dark" href="{{.Permalink}}" rel="bookmark">{{.Title}}</a></h4>
+              <p p-summary>{{ .Summary }}</p>
               <a href="{{.Permalink}}" class="btn btn-transparent">{{ i18n "readmore" }}</a>
             </article>
           </div>
@@ -49,21 +50,21 @@
           {{ range $i,$p := $paginator.Pages }}
           <div class="col-12 mb-100">
             <article data-file="{{.Permalink}}" data-target="article"
-              class="article-full-width {{if not (modBool $i 2)}} article-right {{ end }}" data-clarity-region="article">
+              class="h-entry article-full-width {{if not (modBool $i 2)}} article-right {{ end }}" data-clarity-region="article">
               <div class="post-image">
                 {{- /* YourOnly.One: changed
-                  <img class="img-fluid" src="{{ .Params.Image | absURL }}" alt="post-thumb">
+                  <img class="u-featured img-fluid" src="{{ .Params.Image | absURL }}" alt="post-thumb">
                 */ -}}
-                <img class="img-fluid" src="{{ index .Params.images 0 | absURL }}" alt="post-thumb">
+                <img class="u-featured img-fluid" src="{{ index .Params.images 0 | absURL }}" alt="post-thumb">
               </div>
-              <div class="post-content">
+              <div class="e-content post-content">
                 <ul class="list-inline d-flex justify-content-between border-bottom post-meta pb-2 mb-4">
-                  <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ .PublishDate.Format "Jan 02, 2006" }}
+                  <li class="list-inline-item"><i class="ti-calendar mr-2"></i><time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .Date }}</time>
                   </li>
                   <li class="list-inline-item"><i class="ti-alarm-clock mr-2"></i><span class="eta"></span> read</li>
                 </ul>
-                <h4 class="mb-4"><a href="{{.Permalink}}" class="text-dark">{{ .Title }}</a></h4>
-                <p class="mb-0 post-summary">{{.Summary }}</p>
+                <h4 class="p-name mb-4"><a href="{{.Permalink}}" class="u-url text-dark" rel="bookmark">{{ .Title }}</a></h4>
+                <p class="p-summary mb-0 post-summary">{{.Summary }}</p>
                 <a class="btn btn-transparent mb-4" href="{{.Permalink}}">Continue...</a>
               </div>
             </article>
