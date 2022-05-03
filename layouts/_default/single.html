@@ -62,6 +62,10 @@
             {{- $content := replace .Content $inserthere $joined 1 -}}
             {{ $content | safeHTML }}
           {{- /* END: YourOnly.One: changed */ -}}
+
+          {{ with .Params.syndications }}
+            {{ partial "syndications.html" . }}
+          {{ end }}
         </article>
         <artcle class="content">
           <!-- BGN: YourOnly.One Head-01-Top -->
@@ -109,6 +113,9 @@
           {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ .Param "author.name" }}" class="u-photo img-fluid w-100 mb-4">{{end}}
         {{ end }}
         <div class="e-content content">{{ .Content }}</div>
+        {{ with .Params.syndications }}
+          {{ partial "syndications.html" . }}
+        {{ end }}
       </div>
     </div>
   </div>
