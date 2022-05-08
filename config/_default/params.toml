@@ -1,7 +1,7 @@
 #mainSections = ["blog", "posts"]                                             # Hugo default
 mainTypes = ["article", "sitepage", "review"]                                                # YourOnly.One
 
-rssfull = "true"
+rssfull = true
 jquerycdn = true
 websubhubs = ["https://pubsubhubbub.appspot.com/", "https://youronlyone.superfeedr.com/", "https://pubsubhubbub.superfeedr.com/", "https://websubhub.com/hub"]
 
@@ -46,7 +46,7 @@ googleadsense = "ca-pub-8360283248006398"
 
 	# JS Plugins
 	[[plugins.js]]
-	link = "plugins/jQuery/jquery.min.js"
+	link = ""
 	[[plugins.js]]
 	link = "plugins/bootstrap/bootstrap.min.js"
 	[[plugins.js]]
