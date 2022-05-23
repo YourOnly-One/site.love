@@ -93,12 +93,12 @@ body div.featured-post-slider article.card div.card-img-overlay div.card-content
                 4px -4px 8px hwb(212deg 17% 46% / 100%),
                 -4px -4px 8px hwb(212deg 17% 46% / 100%);
 }
-html > body .nowplayingcard {
+html body .nowplayingcard {
   --box-shadow-color: rgba(255, 0, 120, 1) !important;
 }
-html > body .nowplayingcard .trackInfo #tracktitle,
-html > body .nowplayingcard .trackInfo #trackalbum,
-html > body .nowplayingcard .trackInfo #trackartist {
+html body .nowplayingcard .trackInfo #tracktitle,
+html body .nowplayingcard .trackInfo #trackalbum,
+html body .nowplayingcard .trackInfo #trackartist {
   color: rgba(255, 0, 120, 0.7) !important;
 }
 .large-flag { font-size: 1.7em; }
