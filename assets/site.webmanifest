@@ -1,7 +1,7 @@
 {{- $androidchrome192png := resources.Get "favicon/android-chrome-192x192.png" | resources.Fingerprint "sha384" -}}
 {{- $androidchrome512png := resources.Get "favicon/android-chrome-512x512.png" | resources.Fingerprint "sha384" -}}
 {
-  "name": "Love and Relationship",
+  "name": "Love and Relationships",
   "short_name": "Love",
   "description": "Unlocking the secrets to a fruitful relationship and unconditional love.",
   "dir": "auto",

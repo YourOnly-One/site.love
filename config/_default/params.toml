@@ -12,7 +12,7 @@ googleadsense = "ca-pub-8360283248006398"
 
 	description = "Unlocking the secrets to a fruitful relationship and unconditional love."
 	license = "https://im.youronly.one/p/legal-notice/"
-	keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Love and Relationship", "Love & Relationship"] # Can be overriden per page
+	keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Love and Relationships", "Love and Relationships"] # Can be overriden per page
 	images = ["https://rsc.youronly.one/img/y/Love_and_Relationship.webp"]
 	#copyright = ""
 ### END: Structured Data ###
