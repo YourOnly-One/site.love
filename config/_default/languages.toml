@@ -92,7 +92,7 @@
   languageCodeCountry = "kr"  # custom
   timeZone = "Asia/Seoul"
   tzOffset = "9h" # custom
-  tzAbbr = "한국시간"  # custom; KST
+  tzAbbr = "KST"  # custom; 한국시간
   weight = 150
   title = "사랑과 관계"
   [ko.params]
