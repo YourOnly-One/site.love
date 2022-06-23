@@ -68,7 +68,7 @@
           {{/* YourOnly.One: removed author display */}}
           {{- /* <li class="list-inline-item">Post By {{site.Params.author}}</li> */ -}}
           {{/* YourOnly.One: changed to ISO datetime */}}
-          {{ if not .PublishDate.IsZero }}<li class="list-inline-item"><time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}">{{ time.Format $datetimeformat .PublishDate }}</time></li>{{ end }}
+          {{ if not .PublishDate.IsZero }}<li class="list-inline-item"><time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}">{{ time.Format $datetimeformat (.PublishDate.UTC.Add (time.ParseDuration $.Site.Language.Params.tzOffset)) }} {{ $.Site.Language.Params.tzAbbr }}</time></li>{{ end }}
         </ul>
         <h6><a class="text-dark" href="{{ .Permalink }}">{{.Title}}</a></h6>
       </div>
