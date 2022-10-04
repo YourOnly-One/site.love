@@ -8,156 +8,157 @@ websubhubs = ["https://pubsubhubbub.appspot.com/", "https://youronlyone.superfee
 googleadsense = "ca-pub-8360283248006398"
 
 ### BGN: Structured Data ###
-	siteStartYear = 2008
+  siteStartYear = 2008
 
-	description = "Unlocking the secrets to a fruitful relationship and unconditional love."
-	license = "https://im.youronly.one/p/legal-notice/"
-	keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Love and Relationships", "Love and Relationships"] # Can be overriden per page
-	images = ["https://rsc.youronly.one/img/y/Love_and_Relationship.webp"]
-	#copyright = ""
+  description = "Unlocking the secrets to a fruitful relationship and unconditional love."
+  license = "https://im.youronly.one/p/legal-notice/"
+  keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Love and Relationships", "Love and Relationships"] # Can be overriden per page
+  images = ["https://rsc.youronly.one/img/y/Love_and_Relationship.webp"]
+  #copyright = ""
 ### END: Structured Data ###
 
 ### BGN: Theme Settings ###
-	logo = "https://rsc.youronly.one/img/y/Love_and_Relationship.webp"
-	home = "Home"
-	# theme layout ( two layout is available, "1" and "2" )
-	layout = "1"
-	# Preloader
-	#preloader = true
-	# search
-	search = true
-	# about author
-	#author_image = ""
-	#bio = ""
-	# Contact info
-	#mobile = ""
-	#email = ""
-	#address = ""
-	# Contact Form Action
-	#contact_form_action = "#"
+  logo = "https://rsc.youronly.one/img/y/Love_and_Relationship.webp"
+  home = "Home"
+  # theme layout ( two layout is available, "1" and "2" )
+  layout = "1"
+  # Preloader
+  #preloader = true
+  # search
+  search = true
+  # about author
+  #author_image = ""
+  #bio = ""
+  # Contact info
+  #mobile = ""
+  #email = ""
+  #address = ""
+  # Contact Form Action
+  #contact_form_action = "#"
 
-	# CSS Plugins
-	[[plugins.css]]
-	link = "plugins/bootstrap/bootstrap.min.css"
-	[[plugins.css]]
-	link = "plugins/slick/slick.css"
-	[[plugins.css]]
-	link = "plugins/themify-icons/themify-icons.css"
+  # CSS Plugins
+  [[plugins.css]]
+  link = "plugins/bootstrap/bootstrap.min.css"
+  [[plugins.css]]
+  link = "plugins/slick/slick.css"
+  [[plugins.css]]
+  link = "plugins/themify-icons/themify-icons.css"
 
-	# JS Plugins
-	[[plugins.js]]
-	link = ""
-	[[plugins.js]]
-	link = "plugins/bootstrap/bootstrap.min.js"
-	[[plugins.js]]
-	link = "plugins/slick/slick.min.js"
-	[[plugins.js]]
-	link = "plugins/headroom/headroom.js"
-	[[plugins.js]]
-	link = "plugins/instafeed/instafeed.min.js"
-	[[plugins.js]]
-	link = "plugins/masonry/masonry.js"
-	[[plugins.js]]
-	link = "plugins/reading-time/readingTime.min.js"
-	[[plugins.js]]
-	link = "plugins/smooth-scroll/smooth-scroll.js"
-	[[plugins.js]]
-	link = "plugins/search/fuse.min.js"
-	[[plugins.js]]
-	link = "plugins/search/mark.js"
-	[[plugins.js]]
-	link = "plugins/search/search.js"
+  # JS Plugins
+  [[plugins.js]]
+  link = ""
+  [[plugins.js]]
+  link = "plugins/bootstrap/bootstrap.min.js"
+  [[plugins.js]]
+  link = "plugins/slick/slick.min.js"
+  [[plugins.js]]
+  link = "plugins/headroom/headroom.js"
+  [[plugins.js]]
+  link = "plugins/instafeed/instafeed.min.js"
+  [[plugins.js]]
+  link = "plugins/masonry/masonry.js"
+  [[plugins.js]]
+  link = "plugins/reading-time/readingTime.min.js"
+  [[plugins.js]]
+  link = "plugins/smooth-scroll/smooth-scroll.js"
+  [[plugins.js]]
+  link = "plugins/search/fuse.min.js"
+  [[plugins.js]]
+  link = "plugins/search/mark.js"
+  [[plugins.js]]
+  link = "plugins/search/search.js"
 
-	# Instagram feed
-	[instafeed]
-	enable = false
-	access_token = "183794425326191|5734e2f164e94e3247f0f1499061c7b7"
+  # Instagram feed
+  [instafeed]
+  enable = false
+  access_token = "183794425326191|5734e2f164e94e3247f0f1499061c7b7"
 
-	# cookies
-	[cookies]
-	enable = false
-	expire_days = 2
+  # cookies
+  [cookies]
+  enable = false
+  expire_days = 2
 
-	# social site
-	[[social]]
-	icon = "fa fa-mastodon"
-	link = "https://c.im/@youronlyone"
+  # social site
+  [[social]]
+  icon = "fa fa-mastodon"
+  link = "https://c.im/@youronlyone"
 
-	[[social]]
-	icon = "ti-facebook"
-	link = "https://facebook.com/YourOnly.ONE.ofcl"
+  [[social]]
+  icon = "ti-facebook"
+  link = "https://facebook.com/YourOnly.ONE.ofcl"
 
-	[[social]]
-	icon = "ti-facebook"
-	link = "https://facebook.com/YourOnlyOne7"
+  [[social]]
+  icon = "ti-facebook"
+  link = "https://facebook.com/YourOnlyOne7"
 
-	[[social]]
-	icon = "ti-twitter-alt"
-	link = "https://twitter.com/YourOnlyONEofcl"
+  [[social]]
+  icon = "ti-twitter-alt"
+  link = "https://twitter.com/YourOnlyONEofcl"
 
-	[[social]]
-	icon = "ti-instagram"
-	link = "https://instagram.com/YourOnly.One"
+  [[social]]
+  icon = "ti-instagram"
+  link = "https://instagram.com/YourOnly.One"
 
-	[[social]]
-	icon = "ti-youtube"
-	link = "https://youtube.com/YourOnlyONEofcl"
+  [[social]]
+  icon = "ti-youtube"
+  link = "https://youtube.com/YourOnlyONEofcl"
 ### END: Theme Settings ###
 
 ### BGN: Other Settings ###
-	[semweb]
-		org = "yelosan"
+  [semweb]
+    org = "yelosan"
 
-		#isni = ""
-		#issn = ""
-		acquirelicensepage = "https://im.youronly.one/p/legal-notice/"
-		copyrightnotice = "Copyleft 🄯 CC-BY-SA 4.0 International by JC John Sese Cuneta"
-		credittext = "I'M YourOnly.One (https://im.youronly.one/)"
-		datecreated = "2008-02-23"
-		isblog = true
-		license = "https://im.youronly.one/p/legal-notice/"
-		publisher = "https://yelosan.youronly.one/"
-		sameas = [
-			"https://facebook.com/101597304949708/",
-			"https://facebook.com/yelosanpub/",
-			"https://c.im/@youronlyone",
-			"https://mastodon.social/@youronlyone",
-			"https://mastodon.online/@youronlyone",
-			"https://pixelfed.social/youronlyone",
-			"https://youtube.com/YourOnlyONEofcl",
-			"https://twitter.com/YourOnlyONEofcl",
-			"https://instagram.com/YourOnly.One",
-			"https://facebook.com/YourOnly.ONE.ofcl",
-			"https://www.pinterest.com/YourOnlyONEofcl",
-			"https://www.eyeem.com/u/YourOnlyOne",
-			"https://www.goodreads.com/youronlyone",
-			"https://vero.co/youronlyone",
-			"https://ecency.com/@youronlyone",
-			"https://hive.blog/@youronlyone",
-			"https://steemit.com/@youronlyone",
-			"https://gitlab.com/techmagus",
-			"https://github.com/techmagus"
-		]
+    #isni = ""
+    #issn = ""
+    acquirelicensepage = "https://im.youronly.one/p/legal-notice/"
+    copyrightnotice = "Copyleft 🄯 CC-BY-SA 4.0 International by JC John Sese Cuneta"
+    credittext = "I'M YourOnly.One (https://im.youronly.one/)"
+    datecreated = "2008-02-23"
+    isblog = true
+    license = "https://im.youronly.one/p/legal-notice/"
+    publisher = "https://yelosan.youronly.one/"
+    sameas = [
+      "https://facebook.com/101597304949708/",
+      "https://facebook.com/yelosanpub/",
+      "https://c.im/@youronlyone",
+      "https://mastodon.social/@youronlyone",
+      "https://mastodon.online/@youronlyone",
+      "https://pixelfed.social/youronlyone",
+      "https://youtube.com/YourOnlyONEofcl",
+      "https://twitter.com/YourOnlyONEofcl",
+      "https://instagram.com/YourOnly.One",
+      "https://facebook.com/YourOnly.ONE.ofcl",
+      "https://www.pinterest.com/YourOnlyONEofcl",
+      "https://www.eyeem.com/u/YourOnlyOne",
+      "https://www.goodreads.com/youronlyone",
+      "https://vero.co/youronlyone",
+      "https://ecency.com/@youronlyone",
+      "https://hive.blog/@youronlyone",
+      "https://steemit.com/@youronlyone",
+      "https://gitlab.com/techmagus",
+      "https://github.com/techmagus"
+    ]
 
-		[[semweb.persons]]
-			person = "yuki"
-			#id = ""
-			#name = ""ᜌᜓᜃᜒ (雪亮 | 스노 | Yuki)"
-			#url = ""
-			#avatar = ""
-			#rel = "noopener external nofollow"
+    [[semweb.persons]]
+      person = "yuki"
+      #id = ""
+      #name = ""ᜌᜓᜃᜒ (雪亮 | 스노 | Yuki)"
+      #url = ""
+      #avatar = ""
+      #rel = "noopener external nofollow"
 
-	[verify]
-		flattr = "4j1gl5"
-		wot = "06c7ef6e7986586661ef"
-		ocs = "c563648adcfa021a0dfd3d3d8f0be64a"
-		followit = "DVn4NQZLUqtYF859ARgM"
+  [verify]
+    flattr = "4j1gl5"
+    wot = "06c7ef6e7986586661ef"
+    ocs = "c563648adcfa021a0dfd3d3d8f0be64a"
+    followit = "DVn4NQZLUqtYF859ARgM"
 
-	[analytics]
-		cfwebanalytics = "07a05e5302d1458da3561ce41791e284"
-		microanalyticsio = "ZwSg9rf6GA"
-		naver = "1375cb4224f1c40"
-		counterdev = "youronlyone"
-		swetrix = "bYdcXUajNvru"
-		microsoftclarity = "63ddi0b99e"
+  [analytics]
+    cfwebanalytics = "07a05e5302d1458da3561ce41791e284"
+    microanalyticsio = "ZwSg9rf6GA"
+    #naver = "1375cb4224f1c40"   # https://youronly.one
+    naver = "137a7c92882ac90"   # https://im.youronly.one
+    counterdev = "youronlyone"
+    swetrix = "bYdcXUajNvru"
+    microsoftclarity = "63ddi0b99e"
 ### END: Other Settings ###
