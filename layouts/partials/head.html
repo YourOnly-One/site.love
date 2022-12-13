@@ -15,6 +15,9 @@
     {{ hugo.Generator }}
   */ -}}
 
+  <!-- theme meta -->
+  <meta name="theme-name" content="parsa-hugo" />
+
   {{ "<!-- plugins -->" | safeHTML }}
   {{ range site.Params.plugins.css }}
   <link rel="stylesheet" href="{{ .link | absURL }} ">
