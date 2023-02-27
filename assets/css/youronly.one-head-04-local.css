@@ -1,17 +1,17 @@
 body {
-  font-family: var(--font-sans-yelosan, var(--font-hebrew-sans-yelosan, var(--font-baybayin-sans-yelosan, sans-serif)));
+  font-family: var(--font-sans-noto, var(--font-hebrew-sans-noto, var(--font-baybayin-sans-noto, sans-serif)));
 }
 p, .paragraph {
-  font-family: var(--font-sans-yelosan, var(--font-hebrew-sans-yelosan, var(--font-baybayin-sans-yelosan, sans-serif)));
+  font-family: var(--font-sans-noto, var(--font-hebrew-sans-noto, var(--font-baybayin-sans-noto, sans-serif)));
 }
 .btn {
-  font-family: var(--font-sans-yelosan, var(--font-hebrew-sans-yelosan, var(--font-baybayin-sans-yelosan, sans-serif)));
+  font-family: var(--font-sans-noto, var(--font-hebrew-sans-noto, var(--font-baybayin-sans-noto, sans-serif)));
 }
 .font-secondary {
-  font-family: var(--font-sans-yelosan, var(--font-hebrew-sans-yelosan, var(--font-baybayin-sans-yelosan, sans-serif))) !important;
+  font-family: var(--font-sans-noto, var(--font-hebrew-sans-noto, var(--font-baybayin-sans-noto, sans-serif))) !important;
 }
 .pagination .page-item .page-link {
-  font-family: var(--font-sans-yelosan, var(--font-hebrew-sans-yelosan, var(--font-baybayin-sans-yelosan, sans-serif)));
+  font-family: var(--font-sans-noto, var(--font-hebrew-sans-noto, var(--font-baybayin-sans-noto, sans-serif)));
 }
 
 .fa {
