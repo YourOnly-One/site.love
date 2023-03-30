@@ -1,7 +1,7 @@
 {{- $datetimeformat := i18n "datetimeformat" -}}
 <div class="col-lg-4">
   <div class="widget search-box">
-    <form action="{{ site.BaseURL }}/search">
+    <form action="{{ site.BaseURL | relLangURL }}/search">
       <i class="ti-search"></i>
       {{/* YourOnly.One: added multilingual support */}}
       <input class="form-control border-0 pl-5" type="search" placeholder="{{ i18n "search" }}" id="search-query" name="s">
