@@ -92,7 +92,7 @@ favicon_mstilecolor = "#2b5797"
 
   #[[social]]
   #icon = "ti-instagram"
-  #link = "https://instagram.com/YourOnly.One"
+  #link = ""
 
   [[social]]
   icon = "ti-youtube"
