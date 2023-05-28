@@ -30,12 +30,12 @@
         {{ end }}
       </ul>
       <div class="item">
-        <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="large-flag active" title="{{ .Site.Language.LanguageName }}">{{ .Site.Params.languageFlag }}</a>
+        <a href="{{ .Permalink }}" lang="{{ or (.Site.Language.LanguageCode) (.Site.Language.Lang) }}" class="large-flag active" title="{{ .Site.Language.LanguageName }}">{{ .Site.Params.languageFlag }}</a>
       </div>
       {{ if .IsTranslated -}}
         {{ range .Translations }}
           <div class="item">
-            <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="large-flag translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate">{{ .Site.Params.languageFlag }}</a>
+            <a href="{{ .Permalink }}" lang="{{ or (.Site.Language.LanguageCode) (.Site.Language.Lang) }}" class="large-flag translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate">{{ .Site.Params.languageFlag }}</a>
           </div>
         {{ end }}
       {{ else }}
