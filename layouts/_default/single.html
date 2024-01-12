@@ -83,7 +83,7 @@
           <div id="webmentions"></div>
         </article>
         <article class="content" data-html2canvas-ignore>
-          {{ if .Site.DisqusShortname }}
+          {{ if .Params.disqusShortname }}
             {{ template "_internal/disqus.html" . }}
           {{ end }}
         </article>

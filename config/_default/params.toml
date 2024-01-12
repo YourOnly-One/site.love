@@ -5,6 +5,8 @@ jquerycdn = true
 
 favicon_mstilecolor = "#2b5797"
 
+disqusShortname = "youronlyone"
+
 ### BGN: Structured Data ###
   siteStartYear = 2008
   description = "Unlocking the secrets to a fruitful relationship and unconditional love."
