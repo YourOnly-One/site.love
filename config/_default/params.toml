@@ -5,8 +5,6 @@ jquerycdn = true
 
 favicon_mstilecolor = "#2b5797"
 
-disqusShortname = "youronlyone"
-
 ### BGN: Structured Data ###
   siteStartYear = 2008
   description = "Unlocking the secrets to a fruitful relationship and unconditional love."
@@ -82,11 +80,11 @@ disqusShortname = "youronlyone"
 
   [[social]]
   icon = "ti-facebook"
-  link = "https://facebook.com/YourOnly.ONE.ofcl"
+  link = "https://www.facebook.com/YourOnly.ONE.ofcl"
 
   [[social]]
   icon = "ti-facebook"
-  link = "https://facebook.com/YourOnlyOne7"
+  link = "https://www.facebook.com/YourOnlyOne7"
 
   #[[social]]
   #icon = "ti-twitter-alt"
@@ -98,7 +96,7 @@ disqusShortname = "youronlyone"
 
   [[social]]
   icon = "ti-youtube"
-  link = "https://youtube.com/YourOnlyONEofcl"
+  link = "https://www.youtube.com/YourOnlyONEofcl"
 ### END: Theme Settings ###
 
 ### BGN: Other Settings ###
@@ -106,12 +104,12 @@ disqusShortname = "youronlyone"
     datecreated = "2008-02-23"
     isblog = true
     sameas = [
-      "https://facebook.com/YourOnlyOne7",
+      "https://www.facebook.com/YourOnlyOne7",
       "https://c.im/@YourOnlyOne",
       "https://pixelfed.social/YourOnlyOne",
       "https://hashi.icu/@YourOnlyOne",
-      "https://youtube.com/@YourOnlyOneOfcl",
-      "https://facebook.com/YourOnly.ONE.ofcl"
+      "https://www.youtube.com/@YourOnlyOneOfcl",
+      "https://www.facebook.com/YourOnly.ONE.ofcl"
     ]
 
   [tools]
