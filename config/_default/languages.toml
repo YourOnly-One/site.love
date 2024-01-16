@@ -9,6 +9,6 @@ _merge = "deep"
     description = "実りある関係と無条件の愛の秘密を解き明かします。"      # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
 
 [ko]
-  title = "사랑과 관계 💞"
+  title = "사랑과관계 💞"
   [ko.params]
     description = "결실을 맺는 관계와 무조건적인 사랑의 비밀을 푸십시오."      # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
