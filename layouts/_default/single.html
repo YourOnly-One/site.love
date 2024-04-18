@@ -67,8 +67,8 @@
             {{ $content | safeHTML }}
           {{- /* END: YourOnly.One: changed */ -}}
 
-          {{ with .Params.syndications }}
-            {{ partial "syndications.html" . }}
+          {{ with .Params.syndication }}
+            {{ partial "syndication.html" . }}
           {{ end }}
         </article>
         <artcle class="content">
@@ -117,8 +117,8 @@
           {{ with .Params.images }}<img src="{{ index . 0 | absURL }}" alt="{{ .Param "author.name" }}" class="u-photo img-fluid w-100 mb-4">{{end}}
         {{ end }}
         <div class="e-content content">{{ .Content }}</div>
-        {{ with .Params.syndications }}
-          {{ partial "syndications.html" . }}
+        {{ with .Params.syndication }}
+          {{ partial "syndication.html" . }}
         {{ end }}
       </div>
     </div>
