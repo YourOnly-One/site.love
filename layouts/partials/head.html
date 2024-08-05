@@ -7,16 +7,17 @@
   <title class="p-name">{{ site.Title }}</title>
 
   {{- /* We already have this
-    {{ "<!-- mobile responsive meta -->" | safeHTML }}
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}" class="p-summary">
-    {{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-
-    {{ hugo.Generator }}
+  {{ "<!-- mobile responsive meta -->" | safeHTML }}
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  {{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
   */ -}}
 
   <!-- theme meta -->
   <meta name="theme-name" content="parsa-hugo" />
+  {{- /* We already have this
+  {{ hugo.Generator }}
+  */ -}}
 
   {{ "<!-- plugins -->" | safeHTML }}
   {{ range site.Params.plugins.css }}
@@ -27,18 +28,19 @@
   {{ $styles := resources.Get "css/style.css" | minify }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
-  {{- /* "<!--Favicon-->" | safeHTML */ -}}
-  {{- /* <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon"> */ -}}
-  {{- /* <link rel="icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon"> */ -}}
-
   {{- /* YourOnly.One: we already have this
-    {{ with .Params.cover }}
-    <meta property="og:image" content="{{ . | absURL }}" />
-    {{ end }}
+  {{ "<!--Favicon-->" | safeHTML }}
+  <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">
+  <link rel="icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">
+
+  {{ with .Params.image }}
+  <meta property="og:image" content="{{ . | absURL }}" />
+  {{ end }}
   */ -}}
 
   {{- /* We already have this
-    {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/google_analytics.html" . }}
   */ -}}
 
   <!-- BGN: YourOnly.One Head-02-Bottom -->
